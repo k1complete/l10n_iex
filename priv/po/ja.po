@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2014-07-14 19:50+0900\n"
+"PO-Revision-Date: 2014-07-21 17:57+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -24,25 +24,25 @@ msgid ""
 "\n"
 "There are many other helpers available:\n"
 "\n"
-"* `c/2`       — compiles a file at the given path\n"
-"* `cd/1`      — changes the current directory\n"
-"* `clear/0`   — clears the screen\n"
-"* `flush/0`   — flushes all messages sent to the shell\n"
-"* `h/0`       — prints this help message\n"
-"* `h/1`       — prints help for the given module, function or macro\n"
-"* `l/1`       — loads the given module's beam code and purges the current "
+"  * `c/2`       — compiles a file at the given path\n"
+"  * `cd/1`      — changes the current directory\n"
+"  * `clear/0`   — clears the screen\n"
+"  * `flush/0`   — flushes all messages sent to the shell\n"
+"  * `h/0`       — prints this help message\n"
+"  * `h/1`       — prints help for the given module, function or macro\n"
+"  * `l/1`       — loads the given module's beam code and purges the current "
 "version\n"
-"* `ls/0`      — lists the contents of the current directory\n"
-"* `ls/1`      — lists the contents of the specified directory\n"
-"* `pwd/0`     — prints the current working directory\n"
-"* `r/1`       — recompiles and reloads the given module's source file\n"
-"* `respawn/0` — respawns the current shell\n"
-"* `s/1`       — prints spec information\n"
-"* `t/1`       — prints type information\n"
-"* `v/0`       — prints the history of commands evaluated in the session\n"
-"* `v/1`       — retrieves the nth value from the history\n"
-"* `import_file/1`\n"
-"              — evaluates the given file in the shell's context\n"
+"  * `ls/0`      — lists the contents of the current directory\n"
+"  * `ls/1`      — lists the contents of the specified directory\n"
+"  * `pwd/0`     — prints the current working directory\n"
+"  * `r/1`       — recompiles and reloads the given module's source file\n"
+"  * `respawn/0` — respawns the current shell\n"
+"  * `s/1`       — prints spec information\n"
+"  * `t/1`       — prints type information\n"
+"  * `v/0`       — prints the history of commands evaluated in the session\n"
+"  * `v/1`       — retrieves the nth value from the history\n"
+"  * `import_file/1`\n"
+"                — evaluates the given file in the shell's context\n"
 "\n"
 "Help for functions in this module can be consulted\n"
 "directly from the command line, as an example, try:\n"
@@ -66,24 +66,24 @@ msgstr ""
 "\n"
 "他に沢山のヘルパーが有効です:\n"
 "\n"
-"* `c/2`       — 与えられたパスのファイルをコンパイルします\n"
-"* `cd/1`      — カレントディレクトリを変更します\n"
-"* `clear/0`   — スクリーンをクリアします\n"
-"* `flush/0`   — シェルへ送信した全メッセージを破棄します\n"
-"* `h/0`       — このヘルプメッセージを表示します\n"
-"* `h/1`       — 与えられたモジュール、関数、マクロのヘルプを表示します\n"
-"* `l/1`       — beamコードをロードして現在のバージョンをパージします\n"
-"* `ls/0`      — カレントディレクトリの内容をリストします\n"
-"* `ls/1`      — 指定されたディレクトリの内容をリストします\n"
-"* `pwd/0`     — カレントワーキングディレクトリを表示します\n"
-"* `r/1`       — 与えられたモジュールのソースコードを再コンパイルしてリロードします\n"
-"* `respawn/0` — 現在のシェルを再生成します\n"
-"* `s/1`       — Spec情報を表示します\n"
-"* `t/1`       — 型情報を表示します\n"
-"* `v/0`       — セッションのコマンド評価の履歴を表示します\n"
-"* `v/1`       — 履歴のn番目を取り出します\n"
-"* `import_file/1`\n"
-"              — シェルのコンテキストで与えられたファイルを評価します\n"
+"  * `c/2`       — 与えられたパスのファイルをコンパイルします\n"
+"  * `cd/1`      — カレントディレクトリを変更します\n"
+"  * `clear/0`   — スクリーンをクリアします\n"
+"  * `flush/0`   — シェルへ送信した全メッセージを破棄します\n"
+"  * `h/0`       — このヘルプメッセージを表示します\n"
+"  * `h/1`       — 与えられたモジュール、関数、マクロのヘルプを表示します\n"
+"  * `l/1`       — beamコードをロードして現在のバージョンをパージします\n"
+"  * `ls/0`      — カレントディレクトリの内容をリストします\n"
+"  * `ls/1`      — 指定されたディレクトリの内容をリストします\n"
+"  * `pwd/0`     — カレントワーキングディレクトリを表示します\n"
+"  * `r/1`       — 与えられたモジュールのソースコードを再コンパイルしてリロードします\n"
+"  * `respawn/0` — 現在のシェルを再生成します\n"
+"  * `s/1`       — Spec情報を表示します\n"
+"  * `t/1`       — 型情報を表示します\n"
+"  * `v/0`       — セッションのコマンド評価の履歴を表示します\n"
+"  * `v/1`       — 履歴のn番目を取り出します\n"
+"  * `import_file/1`\n"
+"                — シェルのコンテキストで与えられたファイルを評価します\n"
 "\n"
 "このモジュールの関数のヘルプはコマンドラインから\n"
 "このようにして、直接調べることができる。やってみよう:\n"
@@ -214,9 +214,9 @@ msgid ""
 "\n"
 "Where \"remsh\" means \"remote shell\". In general, Elixir supports:\n"
 "\n"
-"* remsh from an elixir node to an elixir node\n"
-"* remsh from a plain erlang node to an elixir node (through the ^G menu)\n"
-"* remsh from an elixir node to a plain erlang node (and get an erl shell "
+"  * remsh from an elixir node to an elixir node\n"
+"  * remsh from a plain erlang node to an elixir node (through the ^G menu)\n"
+"  * remsh from an elixir node to a plain erlang node (and get an erl shell "
 "there)\n"
 "\n"
 "Connecting an Elixir shell to a remote node without Elixir is\n"
@@ -430,9 +430,9 @@ msgstr ""
 "\"remsh\"のところは\"remote shell\"を意味します。一般に、Elixirは以下を\n"
 "サポートします:\n"
 "\n"
-"* elixirノードからelixirノードへのremsh\n"
-"* プレーンerlangノードから(^Gメニューを通って)elixirノードへのremsh\n"
-"* elixirノードからプレーンerlangノード(のerl シェル)へのremsh\n"
+"  * elixirノードからelixirノードへのremsh\n"
+"  * プレーンerlangノードから(^Gメニューを通って)elixirノードへのremsh\n"
+"  * elixirノードからプレーンerlangノード(のerl シェル)へのremsh\n"
 "\n"
 "ElixirなしでリモートノードのElixirシェルへの接続はサポートされて「いません」。\n"
 "\n"
@@ -526,7 +526,7 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: defmacro IEx.pry(timeout \\ 1000)
-#: Elixir.IEx.pry/1:403
+#: Elixir.IEx.pry/1:420
 msgid ""
 "Pries into the process environment.\n"
 "\n"
@@ -543,8 +543,6 @@ msgid ""
 "of the module being pried. Module functions still need to be\n"
 "accessed via `Mod.fun(args)`.\n"
 "\n"
-"Status: This feature is experimental.\n"
-"\n"
 "## Examples\n"
 "\n"
 "Let's suppose you want to investigate what is happening\n"
@@ -554,18 +552,21 @@ msgid ""
 "the process information. Let's see an example:\n"
 "\n"
 "    import Enum, only: [map: 2]\n"
+"    require IEx\n"
 "\n"
-"    def add(a, b) do\n"
-"      c = a + b\n"
-"      IEx.pry\n"
+"    defmodule Adder do\n"
+"      def add(a, b) do\n"
+"        c = a + b\n"
+"        IEx.pry\n"
+"      end\n"
 "    end\n"
 "\n"
-"When invoking `add(1, 2)`, you will receive a message in\n"
+"When invoking `Adder.add(1, 2)`, you will receive a message in\n"
 "your shell to pry the given environment. By allowing it,\n"
 "the shell will be reset and you gain access to all variables\n"
 "and the lexical scope from above:\n"
 "\n"
-"    iex(1)> map([a,b,c], &IO.inspect(&1))\n"
+"    pry(1)> map([a,b,c], &IO.inspect(&1))\n"
 "    1\n"
 "    2\n"
 "    3\n"
@@ -575,7 +576,7 @@ msgid ""
 "process can be freed by calling `respawn`, which starts a\n"
 "new IEx evaluation cycle, letting this one go:\n"
 "\n"
-"    iex(2)> respawn\n"
+"    pry(2)> respawn\n"
 "    true\n"
 "\n"
 "    Interactive Elixir - press Ctrl+C to exit (type h() ENTER for help)\n"
@@ -585,7 +586,7 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: defmacro IEx.Helpers.t(module)
-#: Elixir.IEx.Helpers.t/1:175
+#: Elixir.IEx.Helpers.t/1:183
 msgid ""
 "When given a module, prints specifications (or simply specs) for all the\n"
 "types defined in it.\n"
@@ -610,8 +611,7 @@ msgstr ""
 "    t(Enum.t)\n"
 
 #. TRANSLATORS: defmacro IEx.Helpers.s(other)
-#: Elixir.IEx.Helpers.s/1:209
-#, fuzzy
+#: Elixir.IEx.Helpers.s/1:217
 msgid ""
 "Similar to `t/1`, only for specs.\n"
 "\n"
@@ -644,7 +644,7 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: defmacro IEx.Helpers.import_file(path)
-#: Elixir.IEx.Helpers.import_file/1:436
+#: Elixir.IEx.Helpers.import_file/1:443
 msgid ""
 "Evaluates the contents of the file at `path` as if it were directly typed "
 "into\n"
@@ -663,7 +663,8 @@ msgid ""
 "    iex(2)> value\n"
 "    13\n"
 msgstr ""
-"それが直接シェルでタイプされたかのように`path`のファイルの内容を評価します。\n"
+"それが直接シェルでタイプされたかのように`path`のファイルの内容を評価しま"
+"す。\n"
 "`path`はリテラルバイナリでなくてはなりません。\n"
 "\n"
 "`path`の先頭の`~`は自動的に展開されます。\n"
@@ -680,7 +681,7 @@ msgstr ""
 "    13\n"
 
 #. TRANSLATORS: defmacro IEx.Helpers.h(other)
-#: Elixir.IEx.Helpers.h/1:127
+#: Elixir.IEx.Helpers.h/1:135
 msgid ""
 "Prints the documentation for the given module\n"
 "or for the given function/arity pair.\n"
@@ -716,15 +717,21 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: def IEx.width()
-#: Elixir.IEx.width/0:340
+#: Elixir.IEx.width/0:348
 msgid ""
-"Get the width to be used on helpers with a maximum (and default) of 80 "
-"chars.\n"
+"Gets the IEx width for printing.\n"
+"\n"
+"Used by helpers and it has a maximum cap of 80 chars.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.started?()
 #: Elixir.IEx.started?/0:322
-msgid "Returns `true` if IEx was properly started.\n"
+msgid "Returns `true` if IEx was started.\n"
+msgstr ""
+
+#. TRANSLATORS: def IEx.inspect_opts()
+#: Elixir.IEx.inspect_opts/0:358
+msgid "Gets the options used for inspecting.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.configure(options)
@@ -743,26 +750,26 @@ msgid ""
 "\n"
 "The value is a keyword list. List of supported keys:\n"
 "\n"
-"* `:enabled`      - boolean value that allows for switching the coloring on "
-"and off\n"
-"* `:eval_result`  - color for an expression's resulting value\n"
-"* `:eval_info`    - … various informational messages\n"
-"* `:eval_error`   - … error messages\n"
-"* `:stack_app`    - … the app in stack traces\n"
-"* `:stack_info`   - … the remaining info in stacktraces\n"
-"* `:ls_directory` - … for directory entries (ls helper)\n"
-"* `:ls_device`    - … device entries (ls helper)\n"
+"  * `:enabled`      - boolean value that allows for switching the coloring "
+"on and off\n"
+"  * `:eval_result`  - color for an expression's resulting value\n"
+"  * `:eval_info`    - … various informational messages\n"
+"  * `:eval_error`   - … error messages\n"
+"  * `:stack_app`    - … the app in stack traces\n"
+"  * `:stack_info`   - … the remaining info in stacktraces\n"
+"  * `:ls_directory` - … for directory entries (ls helper)\n"
+"  * `:ls_device`    - … device entries (ls helper)\n"
 "\n"
 "When printing documentation, IEx will convert the markdown\n"
 "documentation to ANSI as well. Those can be configured via:\n"
 "\n"
-"* `:doc_code`        — the attributes for code blocks (cyan, bright)\n"
-"* `:doc_inline_code` - inline code (cyan)\n"
-"* `:doc_headings`    - h1 and h2 (yellow, bright)\n"
-"* `:doc_title`       — the overall heading for the output (reverse,yellow,"
+"  * `:doc_code`        — the attributes for code blocks (cyan, bright)\n"
+"  * `:doc_inline_code` - inline code (cyan)\n"
+"  * `:doc_headings`    - h1 and h2 (yellow, bright)\n"
+"  * `:doc_title`       — the overall heading for the output (reverse,yellow,"
 "bright)\n"
-"* `:doc_bold`        - (bright)\n"
-"* `:doc_underline`   - (underline)\n"
+"  * `:doc_bold`        - (bright)\n"
+"  * `:doc_underline`   - (underline)\n"
 "\n"
 "## Inspect\n"
 "\n"
@@ -784,14 +791,14 @@ msgid ""
 "\n"
 "The value is a keyword list. Two prompt types:\n"
 "\n"
-"* `:default_prompt` - used when `Node.alive?` returns false\n"
-"* `:alive_prompt`   - used when `Node.alive?` returns true\n"
+"  * `:default_prompt` - used when `Node.alive?` returns false\n"
+"  * `:alive_prompt`   - used when `Node.alive?` returns true\n"
 "\n"
 "The part of the listed in the following of the prompt string is replaced.\n"
 "\n"
-"* `%counter` - the index of the history\n"
-"* `%prefix`  - a prefix given by `IEx.Server`\n"
-"* `%node`    - the name of the local node\n"
+"  * `%counter` - the index of the history\n"
+"  * `%prefix`  - a prefix given by `IEx.Server`\n"
+"  * `%node`    - the name of the local node\n"
 "\n"
 msgstr ""
 
@@ -800,10 +807,11 @@ msgstr ""
 msgid "Returns IEx configuration.\n"
 msgstr ""
 
-#. TRANSLATORS: def IEx.color(color_name, string)
-#: Elixir.IEx.color/2:330
+#. TRANSLATORS: def IEx.color(color, string)
+#: Elixir.IEx.color/2:331
 msgid ""
-"Returns `string` escaped using the specified color.\n"
+"Returns `string` escaped using the specified `color`.\n"
+"\n"
 "ANSI escapes in `string` are not processed in any way.\n"
 msgstr ""
 
@@ -825,28 +833,28 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: def IEx.Server.whereis()
-#: Elixir.IEx.Server.whereis/0:13
+#: Elixir.IEx.Server.whereis/0:14
 msgid "Finds where the current IEx server is located.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.Server.take_over(identifier, opts, timeout \\ 1000, server \\ whereis())
-#: Elixir.IEx.Server.take_over/4:39
+#: Elixir.IEx.Server.take_over/4:40
 msgid ""
 "Requests to take over the given shell from the\n"
 "current process.\n"
 msgstr ""
 
-#. TRANSLATORS: def IEx.Server.start(opts, callback)
-#: Elixir.IEx.Server.start/2:80
+#. TRANSLATORS: def IEx.Server.start(opts, arg2)
+#: Elixir.IEx.Server.start/2:81
 msgid ""
 "Starts IEx by executing a given callback and spawning\n"
 "the server only after the callback is done.\n"
 "\n"
 "The server responsibilities include:\n"
 "\n"
-"* reading input\n"
-"* sending messages to the evaluator\n"
-"* handling takeover process of the evaluator\n"
+"  * reading input\n"
+"  * sending messages to the evaluator\n"
+"  * handling takeover process of the evaluator\n"
 "\n"
 "If there is any takeover during the callback execution\n"
 "we spawn a new server for it without waiting for its\n"
@@ -936,7 +944,7 @@ msgid "Appends one entry to the history with the given counter.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.Helpers.v(n)
-#: Elixir.IEx.Helpers.v/1:255
+#: Elixir.IEx.Helpers.v/1:263
 msgid ""
 "Retrieves the nth expression's value from the history.\n"
 "\n"
@@ -950,7 +958,7 @@ msgstr ""
 "例えば、v(-1)は最後に評価された式を返します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.v()
-#: Elixir.IEx.Helpers.v/0:239
+#: Elixir.IEx.Helpers.v/0:247
 msgid ""
 "Prints the history of expressions evaluated during the session along with\n"
 "their results.\n"
@@ -959,7 +967,7 @@ msgstr ""
 "their results.\n"
 
 #. TRANSLATORS: def IEx.Helpers.respawn()
-#: Elixir.IEx.Helpers.respawn/0:412
+#: Elixir.IEx.Helpers.respawn/0:419
 msgid ""
 "Respawns the current shell by starting a new\n"
 "process and a new scope. Returns true if it worked.\n"
@@ -968,7 +976,7 @@ msgstr ""
 "成功するとtrueを返します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.r(module)
-#: Elixir.IEx.Helpers.r/1:265
+#: Elixir.IEx.Helpers.r/1:273
 msgid ""
 "Recompiles and reloads the specified module's source file.\n"
 "\n"
@@ -981,12 +989,12 @@ msgstr ""
 "されることに注意してください。\n"
 
 #. TRANSLATORS: def IEx.Helpers.pwd()
-#: Elixir.IEx.Helpers.pwd/0:329
+#: Elixir.IEx.Helpers.pwd/0:336
 msgid "Prints the current working directory.\n"
 msgstr "現在の作業ディレクトリを表示します。"
 
 #. TRANSLATORS: def IEx.Helpers.ls(path \\ ".")
-#: Elixir.IEx.Helpers.ls/1:348
+#: Elixir.IEx.Helpers.ls/1:355
 msgid ""
 "Produces a simple list of a directory's contents.\n"
 "If `path` points to a file, prints its full path.\n"
@@ -995,7 +1003,7 @@ msgstr ""
 "もし`path`がファイルを指していたら、そのフルパスを表示します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.l(module)
-#: Elixir.IEx.Helpers.l/1:294
+#: Elixir.IEx.Helpers.l/1:302
 msgid ""
 "Load the given module's beam code (and ensures any previous\n"
 "old version was properly purged before).\n"
@@ -1004,22 +1012,31 @@ msgstr ""
 "以前の古いバージョンはパージされます)。\n"
 
 #. TRANSLATORS: def IEx.Helpers.h()
-#: Elixir.IEx.Helpers.h/0:103
+#: Elixir.IEx.Helpers.h/0:111
 msgid "Prints the documentation for `IEx.Helpers`.\n"
 msgstr "`IEx.Helpers`のドキュメントを表示します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.flush()
-#: Elixir.IEx.Helpers.flush/0:302
+#: Elixir.IEx.Helpers.flush/0:310
 msgid "Flushes all messages sent to the shell and prints them out.\n"
 msgstr "シェルへ送られた全てのメッセージを破棄し、それらを表示します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.clear()
-#: Elixir.IEx.Helpers.clear/0:95
-msgid "Clear the console screen.\n"
-msgstr "コンソールスクリーンをクリアします。\n"
+#: Elixir.IEx.Helpers.clear/0:99
+msgid ""
+"Clears the console screen.\n"
+"\n"
+"This function only works if ANSI escape codes are enabled\n"
+"on the shell, which means this function is by default\n"
+"unavailable on Windows machines.\n"
+msgstr ""
+"コンソールスクリーンをクリアします。\n"
+"\n"
+"この関数はANSIエスケープコードが有効なシェルでのみ動作します。\n"
+"これはデフォルトではWindowsでは利用できないことを意味します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.cd(directory)
-#: Elixir.IEx.Helpers.cd/1:336
+#: Elixir.IEx.Helpers.cd/1:343
 msgid "Changes the current working directory to the given path.\n"
 msgstr "与えられたパスへカレントディレクトリを変更します。\n"
 
@@ -1059,10 +1076,10 @@ msgstr ""
 msgid ""
 "Eval loop for an IEx session. Its responsibilities include:\n"
 "\n"
-"* loading of .iex files\n"
-"* evaluating code\n"
-"* trapping exceptions in the code being evaluated\n"
-"* keeping expression history\n"
+"  * loading of .iex files\n"
+"  * evaluating code\n"
+"  * trapping exceptions in the code being evaluated\n"
+"  * keeping expression history\n"
 "\n"
 msgstr ""
 
@@ -1087,3 +1104,6 @@ msgid ""
 "In case `tty` is not available (for example, Windows),\n"
 "a dumb terminal version is started instead.\n"
 msgstr ""
+
+#~ msgid "Clear the console screen.\n"
+#~ msgstr "コンソールスクリーンをクリアします。\n"
