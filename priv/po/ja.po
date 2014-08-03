@@ -528,7 +528,7 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: defmacro IEx.pry(timeout \\ 1000)
-#: lib/iex/lib/iex.ex:420
+#: lib/iex/lib/iex.ex:419
 msgid ""
 "Pries into the process environment.\n"
 "\n"
@@ -791,7 +791,7 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: def IEx.width()
-#: lib/iex/lib/iex.ex:348
+#: lib/iex/lib/iex.ex:347
 msgid ""
 "Gets the IEx width for printing.\n"
 "\n"
@@ -807,7 +807,7 @@ msgid "Returns `true` if IEx was started.\n"
 msgstr "もしIExが開始されていたら`true`を返します。\n"
 
 #. TRANSLATORS: def IEx.inspect_opts()
-#: lib/iex/lib/iex.ex:358
+#: lib/iex/lib/iex.ex:357
 msgid "Gets the options used for inspecting.\n"
 msgstr "インスペクトに使うオプションを取得します。\n"
 
@@ -939,37 +939,37 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: def IEx.Introspection.t(module, type, arity)
-#: lib/iex/lib/iex/introspection.ex:222
+#: lib/iex/lib/iex/introspection.ex:221
 msgid "Print type in module with given arity.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.Introspection.t(module, type)
-#: lib/iex/lib/iex/introspection.ex:201
+#: lib/iex/lib/iex/introspection.ex:200
 msgid "Print the given type in module with any arity.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.Introspection.t(module)
-#: lib/iex/lib/iex/introspection.ex:188
+#: lib/iex/lib/iex/introspection.ex:187
 msgid "Print types in module.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.Introspection.s(module, function, arity)
-#: lib/iex/lib/iex/introspection.ex:283
+#: lib/iex/lib/iex/introspection.ex:282
 msgid "Print spec in given module, with arity.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.Introspection.s(module, function)
-#: lib/iex/lib/iex/introspection.ex:262
+#: lib/iex/lib/iex/introspection.ex:261
 msgid "Print specs for given module and function.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.Introspection.s(module)
-#: lib/iex/lib/iex/introspection.ex:243
+#: lib/iex/lib/iex/introspection.ex:242
 msgid "Print specs for given module.\n"
 msgstr ""
 
 #. TRANSLATORS: def IEx.Introspection.h(modules, function, arity)
-#: lib/iex/lib/iex/introspection.ex:89
+#: lib/iex/lib/iex/introspection.ex:88
 msgid ""
 "Documentation for the given function and arity in the list of modules.\n"
 msgstr ""
