@@ -2,18 +2,20 @@ L10nIex
 =======
 
 IExのローカライズドキュメントフォールバックパッケージです。このパッケー
-ジはExgettextパッケージのサンプルとして開発されています。
-現時点でヘルパのサマリの翻訳が終了しています。
-
+ジはExgettextパッケージのサンプルとして開発されています。現時点でヘルパ
+のサマリの翻訳が終了しています。
 
 インストール
 ============
 
 ```$ mix deps.get
    $ mix deps.compile
-   $ mix
+   $ mix l10n.iex.xgettext --iex "../../elixir" 
+                                 # elixirのソースへのパス
 
-あとはElixirのライブラリパスを通します。
+elixirへのソースへのパスを指定することで、poフィアルのリファレンスが絶
+対パスから相対パスに替わります。さらに、emacsのpo-modeでパスを指定する
+(Sコマンド)ことでsコマンドでソース参照が出来るようになります。
 
    $ iex -S mix
    iex(2)> import Exgettext.Helper
@@ -51,8 +53,10 @@ IExのローカライズドキュメントフォールバックパッケージ�
 以下のようにappを指定してl10n.xgettextタスクを呼び出すとそのappの
 @moduledocと@docを拾い出してpotファイルを作成します。
 
-```mix l10n.xgettext app
+```mix l10n.xgettext --app source-of-app
 
+source-of-appとしてappのソースファイルへのパスを指定します。
+これでpotファイルのリファレンスが相対パスになります。
 potファイルはpriv/po/にl10n_iex.potという名前で作成されます。
 (これにmsginitコマンドを実行することで言語.poが作成されます)
 
