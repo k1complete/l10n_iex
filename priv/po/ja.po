@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2014-08-03 22:05+0900\n"
+"PO-Revision-Date: 2014-08-06 22:45+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -689,8 +689,7 @@ msgstr ""
 "\n"
 "モジュールを与えるとモジュールで定義された全てのspecのリストを表示します。\n"
 "\n"
-"明示的にspec名を指定すると(アリティはオプションです)、そのspecを表示しま"
-"す。\n"
+"明示的にspec名を指定すると(アリティはオプションです)、そのspecを表示します。\n"
 "\n"
 "## 例\n"
 "\n"
@@ -925,7 +924,7 @@ msgstr ""
 #. TRANSLATORS: def IEx.configuration()
 #: lib/iex/lib/iex.ex:300
 msgid "Returns IEx configuration.\n"
-msgstr ""
+msgstr "IEx設定を返します。\n"
 
 #. TRANSLATORS: def IEx.color(color, string)
 #: lib/iex/lib/iex.ex:331
@@ -934,16 +933,20 @@ msgid ""
 "\n"
 "ANSI escapes in `string` are not processed in any way.\n"
 msgstr ""
+"指定された`color`を使ってエスケープされた`string`を返します。\n"
+"\n"
+"`string`の中のANSIエスケープはどのようにも処理されません。\n"
+"(`color`はColorsでリストされているスタイルを表すアトムです)\n"
 
 #. TRANSLATORS: def IEx.after_spawn(fun)
 #: lib/iex/lib/iex.ex:307
 msgid "Registers a function to be invoked after the IEx process is spawned.\n"
-msgstr ""
+msgstr "IExプロセスが生成された後に起動される関数を登録します。\n"
 
 #. TRANSLATORS: def IEx.after_spawn()
 #: lib/iex/lib/iex.ex:314
 msgid "Returns registered `after_spawn` callbacks.\n"
-msgstr ""
+msgstr "登録された`after_spawn`コールバックを返します。\n"
 
 #. TRANSLATORS: def IEx.Remsh.expand(node)
 #: lib/iex/lib/iex/remsh.ex:8
@@ -980,36 +983,47 @@ msgid ""
 "we spawn a new server for it without waiting for its\n"
 "conclusion.\n"
 msgstr ""
+"IExの開始時に、与えられたコールバックの実行と、コールバックが実行終了後\n"
+"にのみサーバの生成をします。\n"
+"\n"
+"サーバは以下に責任をもちます:\n"
+"\n"
+"  * 入力の読み込み\n"
+"  * 評価器へのメッセージ送信\n"
+"  * 評価器のプロセスのテイクオーバーのハンドリング\n"
+"\n"
+"もしコールバック実行中にテイクオーバーがあったら、その結果を待つことな\n"
+"く新しいサーバを生成します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.t(module, type, arity)
 #: lib/iex/lib/iex/introspection.ex:221
 msgid "Print type in module with given arity.\n"
-msgstr ""
+msgstr "与えられたアリティのモジュールのタイプを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.t(module, type)
 #: lib/iex/lib/iex/introspection.ex:200
 msgid "Print the given type in module with any arity.\n"
-msgstr ""
+msgstr "与えられたモジュールの任意のアリティのタイプを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.t(module)
 #: lib/iex/lib/iex/introspection.ex:187
 msgid "Print types in module.\n"
-msgstr ""
+msgstr "モジュールのタイプを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.s(module, function, arity)
 #: lib/iex/lib/iex/introspection.ex:282
 msgid "Print spec in given module, with arity.\n"
-msgstr ""
+msgstr "与えられたモジュールとアリティの関数のスペックを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.s(module, function)
 #: lib/iex/lib/iex/introspection.ex:261
 msgid "Print specs for given module and function.\n"
-msgstr ""
+msgstr "与えられたモジュールと関数のスペックを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.s(module)
 #: lib/iex/lib/iex/introspection.ex:242
 msgid "Print specs for given module.\n"
-msgstr ""
+msgstr "与えられたモジュールのスペックを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.h(modules, function, arity)
 #: lib/iex/lib/iex/introspection.ex:88
@@ -1082,9 +1096,7 @@ msgstr ""
 msgid ""
 "Prints the history of expressions evaluated during the session along with\n"
 "their results.\n"
-msgstr ""
-"Prints the history of expressions evaluated during the session along with\n"
-"their results.\n"
+msgstr "セッションの間に評価された式の履歴をその結果とともに表示します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.respawn()
 #: lib/iex/lib/iex/helpers.ex:419
