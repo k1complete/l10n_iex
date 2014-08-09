@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2014-08-06 22:45+0900\n"
+"PO-Revision-Date: 2014-08-09 10:49+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -9,6 +9,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lib/l10n_iex.ex:5
+msgid "OK"
+msgstr ""
 
 #. TRANSLATORS: Elixir.IEx.Helpers Summary
 #: lib/iex/lib/iex/helpers.ex:1
@@ -229,15 +233,15 @@ msgid ""
 "current\n"
 "working directory), then a global one (located at `~/.iex.exs`) and will "
 "load the\n"
-"first one it finds (if any). The code in the chosen .iex file will be\n"
+"first one it finds (if any). The code in the chosen .iex.exs file will be\n"
 "evaluated in the shell's context. So, for instance, any modules that are\n"
-"loaded or variables that are bound in the .iex file will be available in "
+"loaded or variables that are bound in the .iex.exs file will be available in "
 "the\n"
 "shell after it has booted.\n"
 "\n"
-"Sample contents of a local .iex file:\n"
+"Sample contents of a local .iex.exs file:\n"
 "\n"
-"    # source another `.iex` file\n"
+"    # source another `.iex.exs` file\n"
 "    import_file \"~/.iex.exs\"\n"
 "\n"
 "    # print something before the shell starts\n"
@@ -246,7 +250,7 @@ msgid ""
 "    # bind a variable that'll be accessible in the shell\n"
 "    value = 13\n"
 "\n"
-"Running the shell in the directory where the above .iex file is located\n"
+"Running the shell in the directory where the above .iex.exs file is located\n"
 "results in:\n"
 "\n"
 "    $ iex\n"
@@ -271,7 +275,7 @@ msgid ""
 "globally\n"
 "by calling `IEx.configure/1` from your `~/.iex.exs` file like this:\n"
 "\n"
-"    # .iex\n"
+"    # .iex.exs\n"
 "    IEx.configure(inspect: [limit: 3])\n"
 "\n"
 "    ### now run the shell ###\n"
@@ -331,7 +335,7 @@ msgstr ""
 "\n"
 "IExはたくさんのヘルパーを提供します。それらには、シェルで`h()`とタイプ\n"
 "するか、あるいは`IEx.Helpers`モジュールのドキュメンテーションとしてアク\n"
-"セスすることができる。\n"
+"セスすることができます。\n"
 "\n"
 "## ブレークコマンド\n"
 "\n"
@@ -528,7 +532,7 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: defmacro IEx.pry(timeout \\ 1000)
-#: lib/iex/lib/iex.ex:419
+#: lib/iex/lib/iex.ex:422
 msgid ""
 "Pries into the process environment.\n"
 "\n"
@@ -689,7 +693,8 @@ msgstr ""
 "\n"
 "モジュールを与えるとモジュールで定義された全てのspecのリストを表示します。\n"
 "\n"
-"明示的にspec名を指定すると(アリティはオプションです)、そのspecを表示します。\n"
+"明示的にspec名を指定すると(アリティはオプションです)、そのspecを表示しま"
+"す。\n"
 "\n"
 "## 例\n"
 "\n"
@@ -774,7 +779,7 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: def IEx.width()
-#: lib/iex/lib/iex.ex:347
+#: lib/iex/lib/iex.ex:350
 msgid ""
 "Gets the IEx width for printing.\n"
 "\n"
@@ -790,7 +795,7 @@ msgid "Returns `true` if IEx was started.\n"
 msgstr "もしIExが開始されていたら`true`を返します。\n"
 
 #. TRANSLATORS: def IEx.inspect_opts()
-#: lib/iex/lib/iex.ex:357
+#: lib/iex/lib/iex.ex:360
 msgid "Gets the options used for inspecting.\n"
 msgstr "インスペクトに使うオプションを取得します。\n"
 
@@ -954,18 +959,20 @@ msgid ""
 "Provides one helper function that is injected into connecting\n"
 "remote nodes to properly handle autocompletion.\n"
 msgstr ""
+"リモートノードへ接続したときに、きちんと自動補間を取り扱うための\n"
+"一つのヘルパー関数を提供します。\n"
 
 #. TRANSLATORS: def IEx.Server.whereis()
 #: lib/iex/lib/iex/server.ex:14
 msgid "Finds where the current IEx server is located.\n"
-msgstr ""
+msgstr "現在のIExサーバが置かれた場所を見付けます。\n"
 
 #. TRANSLATORS: def IEx.Server.take_over(identifier, opts, timeout \\ 1000, server \\ whereis())
 #: lib/iex/lib/iex/server.ex:40
 msgid ""
 "Requests to take over the given shell from the\n"
 "current process.\n"
-msgstr ""
+msgstr "現在のプロセスから与えられたシェルへのテイクオーバーを要求します。\n"
 
 #. TRANSLATORS: def IEx.Server.start(opts, arg2)
 #: lib/iex/lib/iex/server.ex:81
@@ -996,32 +1003,32 @@ msgstr ""
 "く新しいサーバを生成します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.t(module, type, arity)
-#: lib/iex/lib/iex/introspection.ex:221
+#: lib/iex/lib/iex/introspection.ex:224
 msgid "Print type in module with given arity.\n"
 msgstr "与えられたアリティのモジュールのタイプを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.t(module, type)
-#: lib/iex/lib/iex/introspection.ex:200
+#: lib/iex/lib/iex/introspection.ex:203
 msgid "Print the given type in module with any arity.\n"
 msgstr "与えられたモジュールの任意のアリティのタイプを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.t(module)
-#: lib/iex/lib/iex/introspection.ex:187
+#: lib/iex/lib/iex/introspection.ex:190
 msgid "Print types in module.\n"
 msgstr "モジュールのタイプを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.s(module, function, arity)
-#: lib/iex/lib/iex/introspection.ex:282
+#: lib/iex/lib/iex/introspection.ex:285
 msgid "Print spec in given module, with arity.\n"
 msgstr "与えられたモジュールとアリティの関数のスペックを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.s(module, function)
-#: lib/iex/lib/iex/introspection.ex:261
+#: lib/iex/lib/iex/introspection.ex:264
 msgid "Print specs for given module and function.\n"
 msgstr "与えられたモジュールと関数のスペックを表示します。\n"
 
 #. TRANSLATORS: def IEx.Introspection.s(module)
-#: lib/iex/lib/iex/introspection.ex:242
+#: lib/iex/lib/iex/introspection.ex:245
 msgid "Print specs for given module.\n"
 msgstr "与えられたモジュールのスペックを表示します。\n"
 
