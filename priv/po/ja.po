@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2014-08-09 10:49+0900\n"
+"PO-Revision-Date: 2014-08-09 20:26+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 
 #: lib/l10n_iex.ex:5
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. TRANSLATORS: Elixir.IEx.Helpers Summary
 #: lib/iex/lib/iex/helpers.ex:1
@@ -1036,12 +1036,12 @@ msgstr "与えられたモジュールのスペックを表示します。\n"
 #: lib/iex/lib/iex/introspection.ex:88
 msgid ""
 "Documentation for the given function and arity in the list of modules.\n"
-msgstr ""
+msgstr "モジュールのリスト内で与えられた関数とアリティに対するドキュメンテーション\n"
 
 #. TRANSLATORS: def IEx.Introspection.h(modules, function)
 #: lib/iex/lib/iex/introspection.ex:47
 msgid "Docs for the given function, with any arity, in any of the modules.\n"
-msgstr ""
+msgstr "モジュールのリスト内で与えられた任意のアリティの関数に対するドキュメント\n"
 
 #. TRANSLATORS: def IEx.Introspection.h(module)
 #: lib/iex/lib/iex/introspection.ex:12
@@ -1049,12 +1049,16 @@ msgid ""
 "Documentation for modules.\n"
 "It has a fallback clauses\n"
 msgstr ""
+"モジュールに対するドキュメント。\n"
+"フォールバック節を持ちます。\n"
 
 #. TRANSLATORS: def IEx.History.reset()
 #: lib/iex/lib/iex/history.ex:49
 msgid ""
 "Removes all entries from the history and forces a garbage collection cycle.\n"
 msgstr ""
+"ヒストリから全てのエントリを削除して、ガベージコレクションサイクルを\n"
+"強制します。\n"
 
 #. TRANSLATORS: def IEx.History.nth(n)
 #: lib/iex/lib/iex/history.ex:145
@@ -1064,6 +1068,9 @@ msgid ""
 "If `n` < 0, the count starts from the most recent item and goes back in "
 "time.\n"
 msgstr ""
+"ヒストリからn番目の項目を取得します。\n"
+"\n"
+"もし`n` < 0なら、もっとも最近のアイテムから後ろ向きに数えます。\n"
 
 #. TRANSLATORS: def IEx.History.init()
 #: lib/iex/lib/iex/history.ex:8
@@ -1071,6 +1078,8 @@ msgid ""
 "Initializes IEx process variables. All history\n"
 "information is kept in the process dictionary.\n"
 msgstr ""
+"IExプロセス変数を初期化します。全てのヒストリ情報は\n"
+"プロセス辞書にあり、保持されます。\n"
 
 #. TRANSLATORS: def IEx.History.each(fun)
 #: lib/iex/lib/iex/history.ex:118
@@ -1078,11 +1087,13 @@ msgid ""
 "Enumerates over all items in the history starting from the oldest one and\n"
 "applies `fun` to each one in turn.\n"
 msgstr ""
+"もっとも古いものからスタートして全てのヒストリアイテムを列挙して、\n"
+"それぞれに`fun`を適用します。\n"
 
 #. TRANSLATORS: def IEx.History.append(entry, counter, limit)
 #: lib/iex/lib/iex/history.ex:16
 msgid "Appends one entry to the history with the given counter.\n"
-msgstr ""
+msgstr "与えられたカウンタ値でヒストリにエントリを一つ追加します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.v(n)
 #: lib/iex/lib/iex/helpers.ex:263
@@ -1130,7 +1141,7 @@ msgstr ""
 #. TRANSLATORS: def IEx.Helpers.pwd()
 #: lib/iex/lib/iex/helpers.ex:336
 msgid "Prints the current working directory.\n"
-msgstr "現在の作業ディレクトリを表示します。"
+msgstr "現在の作業ディレクトリを表示します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.ls(path \\ ".")
 #: lib/iex/lib/iex/helpers.ex:355
@@ -1221,6 +1232,13 @@ msgid ""
 "  * keeping expression history\n"
 "\n"
 msgstr ""
+"IExセッションの評価ループです。以下を行います:\n"
+"\n"
+"  * .iex ファイルのロード\n"
+"  * コードの評価\n"
+"  * 評価されているコードの例外をトラップすること\n"
+"  * ヒストリの保持\n"
+"\n"
 
 #. TRANSLATORS: def IEx.Evaluator.load_dot_iex(config, path \\ nil)
 #: lib/iex/lib/iex/evaluator.ex:41
@@ -1228,6 +1246,8 @@ msgid ""
 "Locates and loads an .iex.exs file from one of predefined locations.\n"
 "Returns the new config.\n"
 msgstr ""
+"予め定義された場所の一つから .iex.exs ファイルの場所を指定してロードします。\n"
+"新しいコンフィグを返します。\n"
 
 #. TRANSLATORS: def IEx.CLI.start()
 #: lib/iex/lib/iex/cli.ex:52
@@ -1243,6 +1263,15 @@ msgid ""
 "In case `tty` is not available (for example, Windows),\n"
 "a dumb terminal version is started instead.\n"
 msgstr ""
+"きちんと動くために、Erlang VMがスタートするときに\n"
+"IExは適切な`-user`を設定する必要があります。\n"
+"この関数で正にそれをします。\n"
+"\n"
+"可能であれば、Elixirは開発者がttyで利用できる\n"
+"すべての制御コマンドを持つ tty(スマート端末)を起動します。\n"
+"\n"
+"`tty`が利用できない場合(たとえば、Windows)、ダム端末バージョンが\n"
+"替わりに起動されます。\n"
 
 #~ msgid "Clear the console screen.\n"
 #~ msgstr "コンソールスクリーンをクリアします。\n"
