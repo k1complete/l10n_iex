@@ -2,8 +2,133 @@
 msgid ""
 "OK"
 msgstr ""
+#. TRANSLATORS: def IEx.after_spawn()
+#: lib/iex.ex:314 
+msgid ""
+"Returns registered `after_spawn` callbacks.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.after_spawn(fun)
+#: lib/iex.ex:307 
+msgid ""
+"Registers a function to be invoked after the IEx process is spawned.\n"
+msgstr ""
+#. TRANSLATORS: defmacro IEx.pry(timeout \\ 1000)
+#: lib/iex.ex:422 
+msgid ""
+"Pries into the process environment.\n"
+"\n"
+"This is useful for debugging a particular chunk of code\n"
+"and inspect the state of a particular process. The process\n"
+"is temporarily changed to trap exits (i.e. the process flag\n"
+"`:trap_exit` is set to true) and has the `group_leader` changed\n"
+"to support ANSI escape codes. Those values are reverted by\n"
+"calling `respawn`, which starts a new IEx shell, freeing up\n"
+"the pried one.\n"
+"\n"
+"When a process is pried, all code runs inside IEx and, as\n"
+"such, it is evaluated and cannot access private functions\n"
+"of the module being pried. Module functions still need to be\n"
+"accessed via `Mod.fun(args)`.\n"
+"\n"
+"## Examples\n"
+"\n"
+"Let's suppose you want to investigate what is happening\n"
+"with some particular function. By invoking `IEx.pry` from\n"
+"the function, IEx will allow you to access its binding\n"
+"(variables), verify its lexical information and access\n"
+"the process information. Let's see an example:\n"
+"\n"
+"    import Enum, only: [map: 2]\n"
+"    require IEx\n"
+"\n"
+"    defmodule Adder do\n"
+"      def add(a, b) do\n"
+"        c = a + b\n"
+"        IEx.pry\n"
+"      end\n"
+"    end\n"
+"\n"
+"When invoking `Adder.add(1, 2)`, you will receive a message in\n"
+"your shell to pry the given environment. By allowing it,\n"
+"the shell will be reset and you gain access to all variables\n"
+"and the lexical scope from above:\n"
+"\n"
+"    pry(1)> map([a,b,c], &IO.inspect(&1))\n"
+"    1\n"
+"    2\n"
+"    3\n"
+"\n"
+"Keep in mind that `IEx.pry` runs in the caller process,\n"
+"blocking the caller during the evaluation cycle. The caller\n"
+"process can be freed by calling `respawn`, which starts a\n"
+"new IEx evaluation cycle, letting this one go:\n"
+"\n"
+"    pry(2)> respawn\n"
+"    true\n"
+"\n"
+"    Interactive Elixir - press Ctrl+C to exit (type h() ENTER for help)\n"
+"\n"
+"Setting variables or importing modules in IEx does not\n"
+"affect the caller the environment (hence it is called `pry`).\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Evaluator.load_dot_iex(config, path \\ nil)
+#: lib/iex/evaluator.ex:41 
+msgid ""
+"Locates and loads an .iex.exs file from one of predefined locations.\n"
+"Returns the new config.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.r(module)
+#: lib/iex/helpers.ex:278 
+msgid ""
+"Recompiles and reloads the specified module's source file.\n"
+"\n"
+"Please note that all the modules defined in the same file as `module`\n"
+"are recompiled and reloaded.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Remsh.expand(node)
+#: lib/iex/remsh.ex:8 
+msgid ""
+"Provides one helper function that is injected into connecting\n"
+"remote nodes to properly handle autocompletion.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.ls(path \\ ".")
+#: lib/iex/helpers.ex:360 
+msgid ""
+"Produces a simple list of a directory's contents.\n"
+"If `path` points to a file, prints its full path.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Server.start(opts, arg2)
+#: lib/iex/server.ex:81 
+msgid ""
+"Starts IEx by executing a given callback and spawning\n"
+"the server only after the callback is done.\n"
+"\n"
+"The server responsibilities include:\n"
+"\n"
+"  * reading input\n"
+"  * sending messages to the evaluator\n"
+"  * handling takeover process of the evaluator\n"
+"\n"
+"If there is any takeover during the callback execution\n"
+"we spawn a new server for it without waiting for its\n"
+"conclusion.\n"
+msgstr ""
+#. TRANSLATORS: defmacro IEx.Helpers.t(module)
+#: lib/iex/helpers.ex:188 
+msgid ""
+"When given a module, prints specifications (or simply specs) for all the\n"
+"types defined in it.\n"
+"\n"
+"When given a particular type name, prints its spec.\n"
+"\n"
+"## Examples\n"
+"\n"
+"    t(Enum)\n"
+"    t(Enum.t/0)\n"
+"    t(Enum.t)\n"
+msgstr ""
 #. TRANSLATORS: Elixir.IEx.Helpers Summary
-#: lib/iex/lib/iex/helpers.ex:1 
+#: lib/iex/helpers.ex:1 
 msgid ""
 "Welcome to Interactive Elixir. You are currently\n"
 "seeing the documentation for the module `IEx.Helpers`\n"
@@ -45,11 +170,249 @@ msgid ""
 "\n"
 "    h(Enum)\n"
 "    h(Enum.reverse/1)\n"
+"    \n"
+"To discover all available functions for a module, type the module name\n"
+"follow by a dot, then press tab to trigger autocomplete. For example:\n"
+"\n"
+"    Enum.\n"
 "\n"
 "To learn more about IEx as a whole, just type `h(IEx)`.\n"
 msgstr ""
+#. TRANSLATORS: defmacro IEx.Helpers.s(other)
+#: lib/iex/helpers.ex:222 
+msgid ""
+"Similar to `t/1`, only for specs.\n"
+"\n"
+"When given a module, prints the list of all specs defined in the module.\n"
+"\n"
+"When given a particular spec name (with optional arity), prints its spec.\n"
+"\n"
+"## Examples\n"
+"\n"
+"    s(Enum)\n"
+"    s(Enum.all?)\n"
+"    s(Enum.all?/2)\n"
+"    s(is_atom)\n"
+"    s(is_atom/1)\n"
+"\n"
+msgstr ""
+#. TRANSLATORS: def IEx.started?()
+#: lib/iex.ex:322 
+msgid ""
+"Returns `true` if IEx was started.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.color(color, string)
+#: lib/iex.ex:331 
+msgid ""
+"Returns `string` escaped using the specified `color`.\n"
+"\n"
+"ANSI escapes in `string` are not processed in any way.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.configuration()
+#: lib/iex.ex:300 
+msgid ""
+"Returns IEx configuration.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.v(n)
+#: lib/iex/helpers.ex:268 
+msgid ""
+"Retrieves the nth expression's value from the history.\n"
+"\n"
+"Use negative values to lookup expression values relative to the current one.\n"
+"For instance, v(-1) returns the result of the last evaluated expression.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.respawn()
+#: lib/iex/helpers.ex:424 
+msgid ""
+"Respawns the current shell by starting a new\n"
+"process and a new scope. Returns true if it worked.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.History.reset()
+#: lib/iex/history.ex:49 
+msgid ""
+"Removes all entries from the history and forces a garbage collection cycle.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Server.take_over(identifier, opts, timeout \\ 1000, server \\ whereis())
+#: lib/iex/server.ex:40 
+msgid ""
+"Requests to take over the given shell from the\n"
+"current process.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.v()
+#: lib/iex/helpers.ex:252 
+msgid ""
+"Prints the history of expressions evaluated during the session along with\n"
+"their results.\n"
+msgstr ""
+#. TRANSLATORS: defmacro IEx.Helpers.h(other)
+#: lib/iex/helpers.ex:140 
+msgid ""
+"Prints the documentation for the given module\n"
+"or for the given function/arity pair.\n"
+"\n"
+"## Examples\n"
+"\n"
+"    h(Enum)\n"
+"    #=> Prints documentation for Enum\n"
+"\n"
+"It also accepts functions in the format `fun/arity`\n"
+"and `module.fun/arity`, for example:\n"
+"\n"
+"    h receive/1\n"
+"    h Enum.all?/2\n"
+"    h Enum.all?\n"
+"\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.h()
+#: lib/iex/helpers.ex:116 
+msgid ""
+"Prints the documentation for `IEx.Helpers`.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.pwd()
+#: lib/iex/helpers.ex:341 
+msgid ""
+"Prints the current working directory.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.l(module)
+#: lib/iex/helpers.ex:307 
+msgid ""
+"Load the given module's beam code (and ensures any previous\n"
+"old version was properly purged before).\n"
+msgstr ""
+#. TRANSLATORS: def IEx.History.init()
+#: lib/iex/history.ex:8 
+msgid ""
+"Initializes IEx process variables. All history\n"
+"information is kept in the process dictionary.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.inspect_opts()
+#: lib/iex.ex:360 
+msgid ""
+"Gets the options used for inspecting.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.CLI.start()
+#: lib/iex/cli.ex:52 
+msgid ""
+"In order to work properly, IEx needs to be set as the\n"
+"proper `-user` when starting the Erlang VM and we do so\n"
+"by pointing exactly to this function.\n"
+"\n"
+"If possible, Elixir will start a tty (smart terminal)\n"
+"which makes all control commands available in tty\n"
+"available to the developer.\n"
+"\n"
+"In case `tty` is not available (for example, Windows),\n"
+"a dumb terminal version is started instead.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.History.nth(n)
+#: lib/iex/history.ex:145 
+msgid ""
+"Gets the nth item from the history.\n"
+"\n"
+"If `n` < 0, the count starts from the most recent item and goes back in time.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.t(module)
+#: lib/iex/introspection.ex:190 
+msgid ""
+"Print types in module.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.t(module, type, arity)
+#: lib/iex/introspection.ex:224 
+msgid ""
+"Print type in module with given arity.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.t(module, type)
+#: lib/iex/introspection.ex:203 
+msgid ""
+"Print the given type in module with any arity.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.s(module)
+#: lib/iex/introspection.ex:245 
+msgid ""
+"Print specs for given module.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.s(module, function)
+#: lib/iex/introspection.ex:264 
+msgid ""
+"Print specs for given module and function.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.s(module, function, arity)
+#: lib/iex/introspection.ex:285 
+msgid ""
+"Print spec in given module, with arity.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Server.whereis()
+#: lib/iex/server.ex:14 
+msgid ""
+"Finds where the current IEx server is located.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.width()
+#: lib/iex.ex:350 
+msgid ""
+"Gets the IEx width for printing.\n"
+"\n"
+"Used by helpers and it has a maximum cap of 80 chars.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.flush()
+#: lib/iex/helpers.ex:315 
+msgid ""
+"Flushes all messages sent to the shell and prints them out.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Helpers.c(files, path \\ ".")
+#: lib/iex/helpers.ex:69 
+msgid ""
+"Expects a list of files to compile and a path\n"
+"to write their object code to. It returns the name\n"
+"of the compiled modules.\n"
+"\n"
+"When compiling one file, there is no need to wrap it in a list.\n"
+"\n"
+"## Examples\n"
+"\n"
+"    c [\"foo.ex\", \"bar.ex\"], \"ebin\"\n"
+"    #=> [Foo,Bar]\n"
+"\n"
+"    c \"baz.ex\"\n"
+"    #=> [Baz]\n"
+msgstr ""
+#. TRANSLATORS: defmacro IEx.Helpers.import_file(path)
+#: lib/iex/helpers.ex:448 
+msgid ""
+"Evaluates the contents of the file at `path` as if it were directly typed into\n"
+"the shell. `path` has to be a literal binary.\n"
+"\n"
+"A leading `~` in `path` is automatically expanded.\n"
+"\n"
+"## Examples\n"
+"\n"
+"    # ~/file.exs\n"
+"    value = 13\n"
+"\n"
+"    # in the shell\n"
+"    iex(1)> import_file \"~/file.exs\"\n"
+"    13\n"
+"    iex(2)> value\n"
+"    13\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Evaluator.start(server, leader)
+#: lib/iex/evaluator.ex:13 
+msgid ""
+"Eval loop for an IEx session. Its responsibilities include:\n"
+"\n"
+"  * loading of .iex files\n"
+"  * evaluating code\n"
+"  * trapping exceptions in the code being evaluated\n"
+"  * keeping expression history\n"
+"\n"
+msgstr ""
+#. TRANSLATORS: def IEx.History.each(fun)
+#: lib/iex/history.ex:118 
+msgid ""
+"Enumerates over all items in the history starting from the oldest one and\n"
+"applies `fun` to each one in turn.\n"
+msgstr ""
 #. TRANSLATORS: Elixir.IEx Summary
-#: lib/iex/lib/iex.ex:1 
+#: lib/iex.ex:1 
 msgid ""
 "Elixir's interactive shell.\n"
 "\n"
@@ -259,154 +622,8 @@ msgid ""
 "    ** (TokenMissingError) iex:1: incomplete expression\n"
 "\n"
 msgstr ""
-#. TRANSLATORS: defmacro IEx.pry(timeout \\ 1000)
-#: lib/iex/lib/iex.ex:422 
-msgid ""
-"Pries into the process environment.\n"
-"\n"
-"This is useful for debugging a particular chunk of code\n"
-"and inspect the state of a particular process. The process\n"
-"is temporarily changed to trap exits (i.e. the process flag\n"
-"`:trap_exit` is set to true) and has the `group_leader` changed\n"
-"to support ANSI escape codes. Those values are reverted by\n"
-"calling `respawn`, which starts a new IEx shell, freeing up\n"
-"the pried one.\n"
-"\n"
-"When a process is pried, all code runs inside IEx and, as\n"
-"such, it is evaluated and cannot access private functions\n"
-"of the module being pried. Module functions still need to be\n"
-"accessed via `Mod.fun(args)`.\n"
-"\n"
-"## Examples\n"
-"\n"
-"Let's suppose you want to investigate what is happening\n"
-"with some particular function. By invoking `IEx.pry` from\n"
-"the function, IEx will allow you to access its binding\n"
-"(variables), verify its lexical information and access\n"
-"the process information. Let's see an example:\n"
-"\n"
-"    import Enum, only: [map: 2]\n"
-"    require IEx\n"
-"\n"
-"    defmodule Adder do\n"
-"      def add(a, b) do\n"
-"        c = a + b\n"
-"        IEx.pry\n"
-"      end\n"
-"    end\n"
-"\n"
-"When invoking `Adder.add(1, 2)`, you will receive a message in\n"
-"your shell to pry the given environment. By allowing it,\n"
-"the shell will be reset and you gain access to all variables\n"
-"and the lexical scope from above:\n"
-"\n"
-"    pry(1)> map([a,b,c], &IO.inspect(&1))\n"
-"    1\n"
-"    2\n"
-"    3\n"
-"\n"
-"Keep in mind that `IEx.pry` runs in the caller process,\n"
-"blocking the caller during the evaluation cycle. The caller\n"
-"process can be freed by calling `respawn`, which starts a\n"
-"new IEx evaluation cycle, letting this one go:\n"
-"\n"
-"    pry(2)> respawn\n"
-"    true\n"
-"\n"
-"    Interactive Elixir - press Ctrl+C to exit (type h() ENTER for help)\n"
-"\n"
-"Setting variables or importing modules in IEx does not\n"
-"affect the caller the environment (hence it is called `pry`).\n"
-msgstr ""
-#. TRANSLATORS: defmacro IEx.Helpers.t(module)
-#: lib/iex/lib/iex/helpers.ex:183 
-msgid ""
-"When given a module, prints specifications (or simply specs) for all the\n"
-"types defined in it.\n"
-"\n"
-"When given a particular type name, prints its spec.\n"
-"\n"
-"## Examples\n"
-"\n"
-"    t(Enum)\n"
-"    t(Enum.t/0)\n"
-"    t(Enum.t)\n"
-msgstr ""
-#. TRANSLATORS: defmacro IEx.Helpers.s(other)
-#: lib/iex/lib/iex/helpers.ex:217 
-msgid ""
-"Similar to `t/1`, only for specs.\n"
-"\n"
-"When given a module, prints the list of all specs defined in the module.\n"
-"\n"
-"When given a particular spec name (with optional arity), prints its spec.\n"
-"\n"
-"## Examples\n"
-"\n"
-"    s(Enum)\n"
-"    s(Enum.all?)\n"
-"    s(Enum.all?/2)\n"
-"    s(is_atom)\n"
-"    s(is_atom/1)\n"
-"\n"
-msgstr ""
-#. TRANSLATORS: defmacro IEx.Helpers.import_file(path)
-#: lib/iex/lib/iex/helpers.ex:443 
-msgid ""
-"Evaluates the contents of the file at `path` as if it were directly typed into\n"
-"the shell. `path` has to be a literal binary.\n"
-"\n"
-"A leading `~` in `path` is automatically expanded.\n"
-"\n"
-"## Examples\n"
-"\n"
-"    # ~/file.exs\n"
-"    value = 13\n"
-"\n"
-"    # in the shell\n"
-"    iex(1)> import_file \"~/file.exs\"\n"
-"    13\n"
-"    iex(2)> value\n"
-"    13\n"
-msgstr ""
-#. TRANSLATORS: defmacro IEx.Helpers.h(other)
-#: lib/iex/lib/iex/helpers.ex:135 
-msgid ""
-"Prints the documentation for the given module\n"
-"or for the given function/arity pair.\n"
-"\n"
-"## Examples\n"
-"\n"
-"    h(Enum)\n"
-"    #=> Prints documentation for Enum\n"
-"\n"
-"It also accepts functions in the format `fun/arity`\n"
-"and `module.fun/arity`, for example:\n"
-"\n"
-"    h receive/1\n"
-"    h Enum.all?/2\n"
-"    h Enum.all?\n"
-"\n"
-msgstr ""
-#. TRANSLATORS: def IEx.width()
-#: lib/iex/lib/iex.ex:350 
-msgid ""
-"Gets the IEx width for printing.\n"
-"\n"
-"Used by helpers and it has a maximum cap of 80 chars.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.started?()
-#: lib/iex/lib/iex.ex:322 
-msgid ""
-"Returns `true` if IEx was started.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.inspect_opts()
-#: lib/iex/lib/iex.ex:360 
-msgid ""
-"Gets the options used for inspecting.\n"
-msgstr ""
 #. TRANSLATORS: def IEx.configure(options)
-#: lib/iex/lib/iex.ex:275 
+#: lib/iex.ex:275 
 msgid ""
 "Configures IEx.\n"
 "\n"
@@ -470,193 +687,8 @@ msgid ""
 "  * `%node`    - the name of the local node\n"
 "\n"
 msgstr ""
-#. TRANSLATORS: def IEx.configuration()
-#: lib/iex/lib/iex.ex:300 
-msgid ""
-"Returns IEx configuration.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.color(color, string)
-#: lib/iex/lib/iex.ex:331 
-msgid ""
-"Returns `string` escaped using the specified `color`.\n"
-"\n"
-"ANSI escapes in `string` are not processed in any way.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.after_spawn(fun)
-#: lib/iex/lib/iex.ex:307 
-msgid ""
-"Registers a function to be invoked after the IEx process is spawned.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.after_spawn()
-#: lib/iex/lib/iex.ex:314 
-msgid ""
-"Returns registered `after_spawn` callbacks.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Remsh.expand(node)
-#: lib/iex/lib/iex/remsh.ex:8 
-msgid ""
-"Provides one helper function that is injected into connecting\n"
-"remote nodes to properly handle autocompletion.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Server.whereis()
-#: lib/iex/lib/iex/server.ex:14 
-msgid ""
-"Finds where the current IEx server is located.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Server.take_over(identifier, opts, timeout \\ 1000, server \\ whereis())
-#: lib/iex/lib/iex/server.ex:40 
-msgid ""
-"Requests to take over the given shell from the\n"
-"current process.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Server.start(opts, arg2)
-#: lib/iex/lib/iex/server.ex:81 
-msgid ""
-"Starts IEx by executing a given callback and spawning\n"
-"the server only after the callback is done.\n"
-"\n"
-"The server responsibilities include:\n"
-"\n"
-"  * reading input\n"
-"  * sending messages to the evaluator\n"
-"  * handling takeover process of the evaluator\n"
-"\n"
-"If there is any takeover during the callback execution\n"
-"we spawn a new server for it without waiting for its\n"
-"conclusion.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.t(module, type, arity)
-#: lib/iex/lib/iex/introspection.ex:224 
-msgid ""
-"Print type in module with given arity.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.t(module, type)
-#: lib/iex/lib/iex/introspection.ex:203 
-msgid ""
-"Print the given type in module with any arity.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.t(module)
-#: lib/iex/lib/iex/introspection.ex:190 
-msgid ""
-"Print types in module.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.s(module, function, arity)
-#: lib/iex/lib/iex/introspection.ex:285 
-msgid ""
-"Print spec in given module, with arity.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.s(module, function)
-#: lib/iex/lib/iex/introspection.ex:264 
-msgid ""
-"Print specs for given module and function.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.s(module)
-#: lib/iex/lib/iex/introspection.ex:245 
-msgid ""
-"Print specs for given module.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.h(modules, function, arity)
-#: lib/iex/lib/iex/introspection.ex:88 
-msgid ""
-"Documentation for the given function and arity in the list of modules.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.h(modules, function)
-#: lib/iex/lib/iex/introspection.ex:47 
-msgid ""
-"Docs for the given function, with any arity, in any of the modules.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.h(module)
-#: lib/iex/lib/iex/introspection.ex:12 
-msgid ""
-"Documentation for modules.\n"
-"It has a fallback clauses\n"
-msgstr ""
-#. TRANSLATORS: def IEx.History.reset()
-#: lib/iex/lib/iex/history.ex:49 
-msgid ""
-"Removes all entries from the history and forces a garbage collection cycle.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.History.nth(n)
-#: lib/iex/lib/iex/history.ex:145 
-msgid ""
-"Gets the nth item from the history.\n"
-"\n"
-"If `n` < 0, the count starts from the most recent item and goes back in time.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.History.init()
-#: lib/iex/lib/iex/history.ex:8 
-msgid ""
-"Initializes IEx process variables. All history\n"
-"information is kept in the process dictionary.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.History.each(fun)
-#: lib/iex/lib/iex/history.ex:118 
-msgid ""
-"Enumerates over all items in the history starting from the oldest one and\n"
-"applies `fun` to each one in turn.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.History.append(entry, counter, limit)
-#: lib/iex/lib/iex/history.ex:16 
-msgid ""
-"Appends one entry to the history with the given counter.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.v(n)
-#: lib/iex/lib/iex/helpers.ex:263 
-msgid ""
-"Retrieves the nth expression's value from the history.\n"
-"\n"
-"Use negative values to lookup expression values relative to the current one.\n"
-"For instance, v(-1) returns the result of the last evaluated expression.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.v()
-#: lib/iex/lib/iex/helpers.ex:247 
-msgid ""
-"Prints the history of expressions evaluated during the session along with\n"
-"their results.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.respawn()
-#: lib/iex/lib/iex/helpers.ex:419 
-msgid ""
-"Respawns the current shell by starting a new\n"
-"process and a new scope. Returns true if it worked.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.r(module)
-#: lib/iex/lib/iex/helpers.ex:273 
-msgid ""
-"Recompiles and reloads the specified module's source file.\n"
-"\n"
-"Please note that all the modules defined in the same file as `module`\n"
-"are recompiled and reloaded.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.pwd()
-#: lib/iex/lib/iex/helpers.ex:336 
-msgid ""
-"Prints the current working directory.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.ls(path \\ ".")
-#: lib/iex/lib/iex/helpers.ex:355 
-msgid ""
-"Produces a simple list of a directory's contents.\n"
-"If `path` points to a file, prints its full path.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.l(module)
-#: lib/iex/lib/iex/helpers.ex:302 
-msgid ""
-"Load the given module's beam code (and ensures any previous\n"
-"old version was properly purged before).\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.h()
-#: lib/iex/lib/iex/helpers.ex:111 
-msgid ""
-"Prints the documentation for `IEx.Helpers`.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Helpers.flush()
-#: lib/iex/lib/iex/helpers.ex:310 
-msgid ""
-"Flushes all messages sent to the shell and prints them out.\n"
-msgstr ""
 #. TRANSLATORS: def IEx.Helpers.clear()
-#: lib/iex/lib/iex/helpers.ex:99 
+#: lib/iex/helpers.ex:104 
 msgid ""
 "Clears the console screen.\n"
 "\n"
@@ -665,55 +697,28 @@ msgid ""
 "unavailable on Windows machines.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.cd(directory)
-#: lib/iex/lib/iex/helpers.ex:343 
+#: lib/iex/helpers.ex:348 
 msgid ""
 "Changes the current working directory to the given path.\n"
 msgstr ""
-#. TRANSLATORS: def IEx.Helpers.c(files, path \\ ".")
-#: lib/iex/lib/iex/helpers.ex:64 
+#. TRANSLATORS: def IEx.History.append(entry, counter, limit)
+#: lib/iex/history.ex:16 
 msgid ""
-"Expects a list of files to compile and a path\n"
-"to write their object code to. It returns the name\n"
-"of the compiled modules.\n"
-"\n"
-"When compiling one file, there is no need to wrap it in a list.\n"
-"\n"
-"## Examples\n"
-"\n"
-"    c [\"foo.ex\", \"bar.ex\"], \"ebin\"\n"
-"    #=> [Foo,Bar]\n"
-"\n"
-"    c \"baz.ex\"\n"
-"    #=> [Baz]\n"
+"Appends one entry to the history with the given counter.\n"
 msgstr ""
-#. TRANSLATORS: def IEx.Evaluator.start(server, leader)
-#: lib/iex/lib/iex/evaluator.ex:13 
+#. TRANSLATORS: def IEx.Introspection.h(modules, function, arity)
+#: lib/iex/introspection.ex:88 
 msgid ""
-"Eval loop for an IEx session. Its responsibilities include:\n"
-"\n"
-"  * loading of .iex files\n"
-"  * evaluating code\n"
-"  * trapping exceptions in the code being evaluated\n"
-"  * keeping expression history\n"
-"\n"
+"Documentation for the given function and arity in the list of modules.\n"
 msgstr ""
-#. TRANSLATORS: def IEx.Evaluator.load_dot_iex(config, path \\ nil)
-#: lib/iex/lib/iex/evaluator.ex:41 
+#. TRANSLATORS: def IEx.Introspection.h(module)
+#: lib/iex/introspection.ex:12 
 msgid ""
-"Locates and loads an .iex.exs file from one of predefined locations.\n"
-"Returns the new config.\n"
+"Documentation for modules.\n"
+"It has a fallback clauses\n"
 msgstr ""
-#. TRANSLATORS: def IEx.CLI.start()
-#: lib/iex/lib/iex/cli.ex:52 
+#. TRANSLATORS: def IEx.Introspection.h(modules, function)
+#: lib/iex/introspection.ex:47 
 msgid ""
-"In order to work properly, IEx needs to be set as the\n"
-"proper `-user` when starting the Erlang VM and we do so\n"
-"by pointing exactly to this function.\n"
-"\n"
-"If possible, Elixir will start a tty (smart terminal)\n"
-"which makes all control commands available in tty\n"
-"available to the developer.\n"
-"\n"
-"In case `tty` is not available (for example, Windows),\n"
-"a dumb terminal version is started instead.\n"
+"Docs for the given function, with any arity, in any of the modules.\n"
 msgstr ""
