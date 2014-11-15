@@ -78,7 +78,7 @@ msgid ""
 "Returns the new config.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.r(module)
-#: lib/iex/helpers.ex:278 
+#: lib/iex/helpers.ex:277 
 msgid ""
 "Recompiles and reloads the specified module's source file.\n"
 "\n"
@@ -92,7 +92,7 @@ msgid ""
 "remote nodes to properly handle autocompletion.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.ls(path \\ ".")
-#: lib/iex/helpers.ex:360 
+#: lib/iex/helpers.ex:359 
 msgid ""
 "Produces a simple list of a directory's contents.\n"
 "If `path` points to a file, prints its full path.\n"
@@ -114,7 +114,7 @@ msgid ""
 "conclusion.\n"
 msgstr ""
 #. TRANSLATORS: defmacro IEx.Helpers.t(module)
-#: lib/iex/helpers.ex:188 
+#: lib/iex/helpers.ex:187 
 msgid ""
 "When given a module, prints specifications (or simply specs) for all the\n"
 "types defined in it.\n"
@@ -141,24 +141,23 @@ msgid ""
 "\n"
 "There are many other helpers available:\n"
 "\n"
-"  * `c/2`       — compiles a file at the given path\n"
-"  * `cd/1`      — changes the current directory\n"
-"  * `clear/0`   — clears the screen\n"
-"  * `flush/0`   — flushes all messages sent to the shell\n"
-"  * `h/0`       — prints this help message\n"
-"  * `h/1`       — prints help for the given module, function or macro\n"
-"  * `l/1`       — loads the given module's beam code and purges the current version\n"
-"  * `ls/0`      — lists the contents of the current directory\n"
-"  * `ls/1`      — lists the contents of the specified directory\n"
-"  * `pwd/0`     — prints the current working directory\n"
-"  * `r/1`       — recompiles and reloads the given module's source file\n"
-"  * `respawn/0` — respawns the current shell\n"
-"  * `s/1`       — prints spec information\n"
-"  * `t/1`       — prints type information\n"
-"  * `v/0`       — prints the history of commands evaluated in the session\n"
-"  * `v/1`       — retrieves the nth value from the history\n"
-"  * `import_file/1`\n"
-"                — evaluates the given file in the shell's context\n"
+"  * `c/2`           — compiles a file at the given path\n"
+"  * `cd/1`          — changes the current directory\n"
+"  * `clear/0`       — clears the screen\n"
+"  * `flush/0`       — flushes all messages sent to the shell\n"
+"  * `h/0`           — prints this help message\n"
+"  * `h/1`           — prints help for the given module, function or macro\n"
+"  * `l/1`           — loads the given module's beam code\n"
+"  * `ls/0`          — lists the contents of the current directory\n"
+"  * `ls/1`          — lists the contents of the specified directory\n"
+"  * `pwd/0`         — prints the current working directory\n"
+"  * `r/1`           — recompiles and reloads the given module's source file\n"
+"  * `respawn/0`     — respawns the current shell\n"
+"  * `s/1`           — prints spec information\n"
+"  * `t/1`           — prints type information\n"
+"  * `v/0`           — prints the history of commands evaluated in the session\n"
+"  * `v/1`           — retrieves the nth value from the history\n"
+"  * `import_file/1` — evaluates the given file in the shell's context\n"
 "\n"
 "Help for functions in this module can be consulted\n"
 "directly from the command line, as an example, try:\n"
@@ -170,7 +169,7 @@ msgid ""
 "\n"
 "    h(Enum)\n"
 "    h(Enum.reverse/1)\n"
-"    \n"
+"\n"
 "To discover all available functions for a module, type the module name\n"
 "followed by a dot, then press tab to trigger autocomplete. For example:\n"
 "\n"
@@ -179,7 +178,7 @@ msgid ""
 "To learn more about IEx as a whole, just type `h(IEx)`.\n"
 msgstr ""
 #. TRANSLATORS: defmacro IEx.Helpers.s(other)
-#: lib/iex/helpers.ex:222 
+#: lib/iex/helpers.ex:221 
 msgid ""
 "Similar to `t/1`, only for specs.\n"
 "\n"
@@ -214,7 +213,7 @@ msgid ""
 "Returns IEx configuration.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.v(n)
-#: lib/iex/helpers.ex:268 
+#: lib/iex/helpers.ex:267 
 msgid ""
 "Retrieves the nth expression's value from the history.\n"
 "\n"
@@ -222,7 +221,7 @@ msgid ""
 "For instance, v(-1) returns the result of the last evaluated expression.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.respawn()
-#: lib/iex/helpers.ex:424 
+#: lib/iex/helpers.ex:423 
 msgid ""
 "Respawns the current shell by starting a new\n"
 "process and a new scope. Returns true if it worked.\n"
@@ -239,13 +238,13 @@ msgid ""
 "current process.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.v()
-#: lib/iex/helpers.ex:252 
+#: lib/iex/helpers.ex:251 
 msgid ""
 "Prints the history of expressions evaluated during the session along with\n"
 "their results.\n"
 msgstr ""
 #. TRANSLATORS: defmacro IEx.Helpers.h(other)
-#: lib/iex/helpers.ex:140 
+#: lib/iex/helpers.ex:139 
 msgid ""
 "Prints the documentation for the given module\n"
 "or for the given function/arity pair.\n"
@@ -264,17 +263,17 @@ msgid ""
 "\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.h()
-#: lib/iex/helpers.ex:116 
+#: lib/iex/helpers.ex:115 
 msgid ""
 "Prints the documentation for `IEx.Helpers`.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.pwd()
-#: lib/iex/helpers.ex:341 
+#: lib/iex/helpers.ex:340 
 msgid ""
 "Prints the current working directory.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.l(module)
-#: lib/iex/helpers.ex:307 
+#: lib/iex/helpers.ex:306 
 msgid ""
 "Load the given module's beam code (and ensures any previous\n"
 "old version was properly purged before).\n"
@@ -354,12 +353,12 @@ msgid ""
 "Used by helpers and it has a maximum cap of 80 chars.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.flush()
-#: lib/iex/helpers.ex:315 
+#: lib/iex/helpers.ex:314 
 msgid ""
 "Flushes all messages sent to the shell and prints them out.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.c(files, path \\ ".")
-#: lib/iex/helpers.ex:69 
+#: lib/iex/helpers.ex:68 
 msgid ""
 "Expects a list of files to compile and a path\n"
 "to write their object code to. It returns the name\n"
@@ -376,7 +375,7 @@ msgid ""
 "    #=> [Baz]\n"
 msgstr ""
 #. TRANSLATORS: defmacro IEx.Helpers.import_file(path)
-#: lib/iex/helpers.ex:448 
+#: lib/iex/helpers.ex:447 
 msgid ""
 "Evaluates the contents of the file at `path` as if it were directly typed into\n"
 "the shell. `path` has to be a literal binary.\n"
@@ -419,7 +418,7 @@ msgid ""
 "This module is the main entry point for Interactive Elixir and\n"
 "in this documentation we will talk a bit about how IEx works.\n"
 "\n"
-"Notice that some of the functionality described here will not be available\n"
+"Notice that some of the functionalities described here will not be available\n"
 "depending on your terminal. In particular, if you get a message\n"
 "saying that the smart terminal could not be run, some of the\n"
 "features described here won't work.\n"
@@ -688,7 +687,7 @@ msgid ""
 "\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.clear()
-#: lib/iex/helpers.ex:104 
+#: lib/iex/helpers.ex:103 
 msgid ""
 "Clears the console screen.\n"
 "\n"
@@ -697,7 +696,7 @@ msgid ""
 "unavailable on Windows machines.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Helpers.cd(directory)
-#: lib/iex/helpers.ex:348 
+#: lib/iex/helpers.ex:347 
 msgid ""
 "Changes the current working directory to the given path.\n"
 msgstr ""
