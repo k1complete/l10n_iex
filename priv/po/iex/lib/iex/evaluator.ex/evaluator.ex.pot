@@ -1,0 +1,17 @@
+#. TRANSLATORS: def IEx.Evaluator.load_dot_iex(config, path \\ nil)
+#: lib/iex/evaluator.ex:41 
+msgid ""
+"Locates and loads an .iex.exs file from one of predefined locations.\n"
+"Returns the new config.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Evaluator.start(server, leader)
+#: lib/iex/evaluator.ex:13 
+msgid ""
+"Eval loop for an IEx session. Its responsibilities include:\n"
+"\n"
+"  * loading of .iex files\n"
+"  * evaluating code\n"
+"  * trapping exceptions in the code being evaluated\n"
+"  * keeping expression history\n"
+"\n"
+msgstr ""

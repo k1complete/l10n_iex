@@ -28,6 +28,6 @@ defmodule L10nIex.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
 #    [{:exgettext, path: "../"} ]
-    [{:exgettext, github: "k1complete/exgettext"}]
+    [{:exgettext, github: "k1complete/exgettext", branch: "structured"}]
   end
 end
