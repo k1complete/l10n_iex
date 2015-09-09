@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2015-05-19 21:48+0900\n"
+"PO-Revision-Date: 2015-09-09 20:23+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -10,25 +10,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. TRANSLATORS: def IEx.History.reset()
-#: lib/iex/history.ex:49
-msgid ""
-"Removes all entries from the history and forces a garbage collection cycle.\n"
-msgstr ""
-"ヒストリから全てのエントリを削除して、ガベージコレクションサイクルを\n"
-"強制します。\n"
-
 #. TRANSLATORS: def IEx.History.init()
-#: lib/iex/history.ex:8
-msgid ""
-"Initializes IEx process variables. All history\n"
-"information is kept in the process dictionary.\n"
-msgstr ""
-"IExプロセス変数を初期化します。全てのヒストリ情報は\n"
-"プロセス辞書にあり、保持されます。\n"
+#: lib/iex/history.ex:88
+msgid "Initializes IEx history state.\n"
+msgstr "IExヒストリステートを初期化します。\n"
 
-#. TRANSLATORS: def IEx.History.nth(n)
-#: lib/iex/history.ex:145
+#. TRANSLATORS: def IEx.History.nth(state, n)
+#: lib/iex/history.ex:114
 msgid ""
 "Gets the nth item from the history.\n"
 "\n"
@@ -39,8 +27,8 @@ msgstr ""
 "\n"
 "もし`n` < 0なら、もっとも最近のアイテムから後ろ向きに数えます。\n"
 
-#. TRANSLATORS: def IEx.History.each(fun)
-#: lib/iex/history.ex:118
+#. TRANSLATORS: def IEx.History.each(state, fun)
+#: lib/iex/history.ex:105
 msgid ""
 "Enumerates over all items in the history starting from the oldest one and\n"
 "applies `fun` to each one in turn.\n"
@@ -48,7 +36,7 @@ msgstr ""
 "もっとも古いものからスタートして全てのヒストリアイテムを列挙して、\n"
 "それぞれに`fun`を適用します。\n"
 
-#. TRANSLATORS: def IEx.History.append(entry, counter, limit)
-#: lib/iex/history.ex:16
-msgid "Appends one entry to the history with the given counter.\n"
-msgstr "与えられたカウンタ値でヒストリにエントリを一つ追加します。\n"
+#. TRANSLATORS: def IEx.History.append(state, entry, limit)
+#: lib/iex/history.ex:93
+msgid "Appends one entry to the history.\n"
+msgstr "ヒストリにエントリを一つ追加します。\n"

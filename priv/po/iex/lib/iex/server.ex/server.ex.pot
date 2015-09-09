@@ -1,5 +1,5 @@
-#. TRANSLATORS: def IEx.Server.start(opts, arg2)
-#: lib/iex/server.ex:81 
+#. TRANSLATORS: def IEx.Server.start(opts, arg)
+#: lib/iex/server.ex:94 
 msgid ""
 "Starts IEx by executing a given callback and spawning\n"
 "the server only after the callback is done.\n"
@@ -14,14 +14,24 @@ msgid ""
 "we spawn a new server for it without waiting for its\n"
 "conclusion.\n"
 msgstr ""
+#. TRANSLATORS: def IEx.Server.local()
+#: lib/iex/server.ex:21 
+msgid ""
+"Returns the pid of the IEx server on the local node if exists.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Server.current_env()
+#: lib/iex/server.ex:45 
+msgid ""
+"Returns the current session environment if a session exists.\n"
+msgstr ""
 #. TRANSLATORS: def IEx.Server.take_over(identifier, opts, timeout \\ 1000, server \\ whereis())
-#: lib/iex/server.ex:40 
+#: lib/iex/server.ex:62 
 msgid ""
 "Requests to take over the given shell from the\n"
 "current process.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Server.whereis()
-#: lib/iex/server.ex:14 
+#: lib/iex/server.ex:10 
 msgid ""
-"Finds where the current IEx server is located.\n"
+"Finds the IEx server, on this or another node.\n"
 msgstr ""

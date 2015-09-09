@@ -5,7 +5,7 @@ defmodule L10nIex.Mixfile do
   def project do
     [app: :l10n_iex,
      version: "0.0.2",
-     elixir: "~> 1.1.0-dev or ~> 1.0.0 or ~> 0.15.0-dev",
+     elixir: "~> 1.1.0-beta or ~> 1.0.0 or ~> 0.15.0-dev",
      compilers: Mix.compilers ++ [:po],
      deps: deps]
   end

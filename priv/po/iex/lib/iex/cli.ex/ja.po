@@ -11,7 +11,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. TRANSLATORS: def IEx.CLI.start()
-#: lib/iex/cli.ex:52
+#: lib/iex/cli.ex:40
 msgid ""
 "In order to work properly, IEx needs to be set as the\n"
 "proper `-user` when starting the Erlang VM and we do so\n"

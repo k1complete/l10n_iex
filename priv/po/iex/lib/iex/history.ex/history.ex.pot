@@ -1,29 +1,23 @@
-#. TRANSLATORS: def IEx.History.reset()
-#: lib/iex/history.ex:49 
-msgid ""
-"Removes all entries from the history and forces a garbage collection cycle.\n"
-msgstr ""
 #. TRANSLATORS: def IEx.History.init()
-#: lib/iex/history.ex:8 
+#: lib/iex/history.ex:88 
 msgid ""
-"Initializes IEx process variables. All history\n"
-"information is kept in the process dictionary.\n"
+"Initializes IEx history state.\n"
 msgstr ""
-#. TRANSLATORS: def IEx.History.nth(n)
-#: lib/iex/history.ex:145 
+#. TRANSLATORS: def IEx.History.nth(state, n)
+#: lib/iex/history.ex:114 
 msgid ""
 "Gets the nth item from the history.\n"
 "\n"
 "If `n` < 0, the count starts from the most recent item and goes back in time.\n"
 msgstr ""
-#. TRANSLATORS: def IEx.History.each(fun)
-#: lib/iex/history.ex:118 
+#. TRANSLATORS: def IEx.History.each(state, fun)
+#: lib/iex/history.ex:105 
 msgid ""
 "Enumerates over all items in the history starting from the oldest one and\n"
 "applies `fun` to each one in turn.\n"
 msgstr ""
-#. TRANSLATORS: def IEx.History.append(entry, counter, limit)
-#: lib/iex/history.ex:16 
+#. TRANSLATORS: def IEx.History.append(state, entry, limit)
+#: lib/iex/history.ex:93 
 msgid ""
-"Appends one entry to the history with the given counter.\n"
+"Appends one entry to the history.\n"
 msgstr ""

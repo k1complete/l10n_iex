@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2015-05-19 21:48+0900\n"
+"PO-Revision-Date: 2015-09-09 19:19+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -10,18 +10,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. TRANSLATORS: def IEx.Evaluator.load_dot_iex(config, path \\ nil)
-#: lib/iex/evaluator.ex:41
+#. TRANSLATORS: def IEx.Evaluator.load_dot_iex(state, path \\ nil)
+#: lib/iex/evaluator.ex:35
 msgid ""
 "Locates and loads an .iex.exs file from one of predefined locations.\n"
-"Returns the new config.\n"
+"Returns the new state.\n"
 msgstr ""
-"予め定義された場所の一つから .iex.exs ファイルの場所を指定してロードしま"
-"す。\n"
-"新しいコンフィグを返します。\n"
+"予め定義された場所の一つから .iex.exs ファイルの場所を指定してロードします。\n"
+"新しいstateを返します。\n"
 
 #. TRANSLATORS: def IEx.Evaluator.start(server, leader)
-#: lib/iex/evaluator.ex:13
+#: lib/iex/evaluator.ex:4
 msgid ""
 "Eval loop for an IEx session. Its responsibilities include:\n"
 "\n"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2015-05-19 21:48+0900\n"
+"PO-Revision-Date: 2015-09-09 21:55+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. TRANSLATORS: def IEx.Server.start(opts, arg2)
-#: lib/iex/server.ex:81
+#. TRANSLATORS: def IEx.Server.start(opts, arg)
+#: lib/iex/server.ex:94
 msgid ""
 "Starts IEx by executing a given callback and spawning\n"
 "the server only after the callback is done.\n"
@@ -38,14 +38,27 @@ msgstr ""
 "もしコールバック実行中にテイクオーバーがあったら、その結果を待つことな\n"
 "く新しいサーバを生成します。\n"
 
+#. TRANSLATORS: def IEx.Server.local()
+#: lib/iex/server.ex:21
+msgid "Returns the pid of the IEx server on the local node if exists.\n"
+msgstr "もしあれば、ローカルノードにあるIExサーバのpidを返します。\n"
+
+#. TRANSLATORS: def IEx.Server.current_env()
+#: lib/iex/server.ex:45
+msgid "Returns the current session environment if a session exists.\n"
+msgstr "もしセッションがあれば、カレントセッションの環境を返します。\n"
+
 #. TRANSLATORS: def IEx.Server.take_over(identifier, opts, timeout \\ 1000, server \\ whereis())
-#: lib/iex/server.ex:40
+#: lib/iex/server.ex:62
 msgid ""
 "Requests to take over the given shell from the\n"
 "current process.\n"
 msgstr "現在のプロセスから与えられたシェルへのテイクオーバーを要求します。\n"
 
 #. TRANSLATORS: def IEx.Server.whereis()
-#: lib/iex/server.ex:14
-msgid "Finds where the current IEx server is located.\n"
-msgstr "現在のIExサーバが置かれた場所を見付けます。\n"
+#: lib/iex/server.ex:10
+#, fuzzy
+msgid "Finds the IEx server, on this or another node.\n"
+msgstr ""
+"このノード、あるいは他のノードのIExサーバが置かれた場所\n"
+"を見付けます。\n"

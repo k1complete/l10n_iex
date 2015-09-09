@@ -1,46 +1,62 @@
 #. TRANSLATORS: def IEx.Introspection.t(module)
-#: lib/iex/introspection.ex:190 
+#: lib/iex/introspection.ex:261 
 msgid ""
-"Print types in module.\n"
+"Prints the types for the given module.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Introspection.t(module, type, arity)
-#: lib/iex/introspection.ex:224 
+#: lib/iex/introspection.ex:295 
 msgid ""
-"Print type in module with given arity.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.Introspection.t(module, type)
-#: lib/iex/introspection.ex:203 
-msgid ""
-"Print the given type in module with any arity.\n"
+"Prints the type in module with given arity.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Introspection.s(module)
-#: lib/iex/introspection.ex:245 
+#: lib/iex/introspection.ex:316 
 msgid ""
-"Print specs for given module.\n"
+"Prints the specs for given module.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Introspection.s(module, function)
-#: lib/iex/introspection.ex:264 
+#: lib/iex/introspection.ex:335 
 msgid ""
-"Print specs for given module and function.\n"
+"Prints the specs for given module and function.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Introspection.s(module, function, arity)
-#: lib/iex/introspection.ex:285 
+#: lib/iex/introspection.ex:356 
 msgid ""
-"Print spec in given module, with arity.\n"
+"Prints the spec in given module, with arity.\n"
 msgstr ""
-#. TRANSLATORS: def IEx.Introspection.h(modules, function, arity)
-#: lib/iex/introspection.ex:88 
+#. TRANSLATORS: def IEx.Introspection.b(mod)
+#: lib/iex/introspection.ex:169 
 msgid ""
-"Documentation for the given function and arity in the list of modules.\n"
+"Prints the list of behaviour callbacks for the given module.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.t(module, type)
+#: lib/iex/introspection.ex:274 
+msgid ""
+"Prints the given type in module with any arity.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Introspection.h(module)
-#: lib/iex/introspection.ex:12 
+#: lib/iex/introspection.ex:10 
 msgid ""
-"Documentation for modules.\n"
-"It has a fallback clauses\n"
+"Prints the documentation for the given module.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.Introspection.h(modules, function)
-#: lib/iex/introspection.ex:47 
+#: lib/iex/introspection.ex:39 
 msgid ""
-"Docs for the given function, with any arity, in any of the modules.\n"
+"Prints the documentation for the given function\n"
+"with any arity in the list of modules.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.h(modules, function, arity)
+#: lib/iex/introspection.ex:79 
+msgid ""
+"Prints the documentation for the given function\n"
+"and arity in the list of modules.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.b(mod, fun)
+#: lib/iex/introspection.ex:187 
+msgid ""
+"Prints documentation for the given callback function with any arity.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.Introspection.b(mod, fun, arity)
+#: lib/iex/introspection.ex:202 
+msgid ""
+"Prints documentation for the given callback function and arity.\n"
 msgstr ""

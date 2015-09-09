@@ -1,22 +1,39 @@
 #. TRANSLATORS: def IEx.after_spawn()
-#: lib/iex.ex:314 
+#: lib/iex.ex:293 
 msgid ""
 "Returns registered `after_spawn` callbacks.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.after_spawn(fun)
-#: lib/iex.ex:307 
+#: lib/iex.ex:286 
 msgid ""
 "Registers a function to be invoked after the IEx process is spawned.\n"
 msgstr ""
-#. TRANSLATORS: defmacro IEx.pry(timeout \\ 1000)
-#: lib/iex.ex:422 
+#. TRANSLATORS: def IEx.started?()
+#: lib/iex.ex:300 
+msgid ""
+"Returns `true` if IEx was started.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.color(color, string)
+#: lib/iex.ex:307 
+msgid ""
+"Returns `string` escaped using the specified `color`.\n"
+"\n"
+"ANSI escapes in `string` are not processed in any way.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.configuration()
+#: lib/iex.ex:279 
+msgid ""
+"Returns IEx configuration.\n"
+msgstr ""
+#. TRANSLATORS: defmacro IEx.pry(timeout \\ 5000)
+#: lib/iex.ex:337 
 msgid ""
 "Pries into the process environment.\n"
 "\n"
 "This is useful for debugging a particular chunk of code\n"
 "and inspect the state of a particular process. The process\n"
 "is temporarily changed to trap exits (i.e. the process flag\n"
-"`:trap_exit` is set to true) and has the `group_leader` changed\n"
+"`:trap_exit` is set to `true`) and has the `group_leader` changed\n"
 "to support ANSI escape codes. Those values are reverted by\n"
 "calling `respawn`, which starts a new IEx shell, freeing up\n"
 "the pried one.\n"
@@ -29,7 +46,7 @@ msgid ""
 "## Examples\n"
 "\n"
 "Let's suppose you want to investigate what is happening\n"
-"with some particular function. By invoking `IEx.pry` from\n"
+"with some particular function. By invoking `IEx.pry/1` from\n"
 "the function, IEx will allow you to access its binding\n"
 "(variables), verify its lexical information and access\n"
 "the process information. Let's see an example:\n"
@@ -49,12 +66,12 @@ msgid ""
 "the shell will be reset and you gain access to all variables\n"
 "and the lexical scope from above:\n"
 "\n"
-"    pry(1)> map([a,b,c], &IO.inspect(&1))\n"
+"    pry(1)> map([a, b, c], &IO.inspect(&1))\n"
 "    1\n"
 "    2\n"
 "    3\n"
 "\n"
-"Keep in mind that `IEx.pry` runs in the caller process,\n"
+"Keep in mind that `IEx.pry/1` runs in the caller process,\n"
 "blocking the caller during the evaluation cycle. The caller\n"
 "process can be freed by calling `respawn`, which starts a\n"
 "new IEx evaluation cycle, letting this one go:\n"
@@ -67,37 +84,20 @@ msgid ""
 "Setting variables or importing modules in IEx does not\n"
 "affect the caller the environment (hence it is called `pry`).\n"
 msgstr ""
-#. TRANSLATORS: def IEx.started?()
-#: lib/iex.ex:322 
-msgid ""
-"Returns `true` if IEx was started.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.color(color, string)
-#: lib/iex.ex:331 
-msgid ""
-"Returns `string` escaped using the specified `color`.\n"
-"\n"
-"ANSI escapes in `string` are not processed in any way.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.configuration()
-#: lib/iex.ex:300 
-msgid ""
-"Returns IEx configuration.\n"
-msgstr ""
 #. TRANSLATORS: def IEx.inspect_opts()
-#: lib/iex.ex:360 
+#: lib/iex.ex:330 
 msgid ""
 "Gets the options used for inspecting.\n"
 msgstr ""
 #. TRANSLATORS: def IEx.width()
-#: lib/iex.ex:350 
+#: lib/iex.ex:321 
 msgid ""
 "Gets the IEx width for printing.\n"
 "\n"
 "Used by helpers and it has a maximum cap of 80 chars.\n"
 msgstr ""
 #. TRANSLATORS: Elixir.IEx Summary
-#: lib/iex.ex:1 
+#: lib/iex.ex:2 
 msgid ""
 "Elixir's interactive shell.\n"
 "\n"
@@ -166,7 +166,7 @@ msgid ""
 "    $ iex --sname foo\n"
 "    iex(foo@HOST)1>\n"
 "\n"
-"The string in between parenthesis in the prompt is the name\n"
+"The string between the parentheses in the prompt is the name\n"
 "of your node. We can retrieve it by calling the `node()`\n"
 "function:\n"
 "\n"
@@ -271,7 +271,7 @@ msgid ""
 "\n"
 "    Interactive Elixir - press Ctrl+C to exit (type h() ENTER for help)\n"
 "    iex(1)> [1, 2, 3, 4, 5]\n"
-"    [1,2,3,...]\n"
+"    [1, 2, 3, ...]\n"
 "\n"
 "## Expressions in IEx\n"
 "\n"
@@ -308,7 +308,7 @@ msgid ""
 "\n"
 msgstr ""
 #. TRANSLATORS: def IEx.configure(options)
-#: lib/iex.ex:275 
+#: lib/iex.ex:212 
 msgid ""
 "Configures IEx.\n"
 "\n"
@@ -338,7 +338,7 @@ msgid ""
 "  * `:doc_code`        — the attributes for code blocks (cyan, bright)\n"
 "  * `:doc_inline_code` - inline code (cyan)\n"
 "  * `:doc_headings`    - h1 and h2 (yellow, bright)\n"
-"  * `:doc_title`       — the overall heading for the output (reverse,yellow,bright)\n"
+"  * `:doc_title`       — the overall heading for the output (reverse, yellow, bright)\n"
 "  * `:doc_bold`        - (bright)\n"
 "  * `:doc_underline`   - (underline)\n"
 "\n"
@@ -362,13 +362,23 @@ msgid ""
 "\n"
 "The value is a keyword list. Two prompt types:\n"
 "\n"
-"  * `:default_prompt` - used when `Node.alive?` returns false\n"
-"  * `:alive_prompt`   - used when `Node.alive?` returns true\n"
+"  * `:default_prompt` - used when `Node.alive?` returns `false`\n"
+"  * `:alive_prompt`   - used when `Node.alive?` returns `true`\n"
 "\n"
-"The part of the listed in the following of the prompt string is replaced.\n"
+"The following values in the prompt string will be replaced appropriately:\n"
 "\n"
 "  * `%counter` - the index of the history\n"
 "  * `%prefix`  - a prefix given by `IEx.Server`\n"
 "  * `%node`    - the name of the local node\n"
 "\n"
+msgstr ""
+#. TRANSLATORS: def IEx.pry(binding, env, timeout)
+#: lib/iex.ex:400 
+msgid ""
+"Callback for `IEx.pry/1`.\n"
+"\n"
+"You can invoke this function directly when you are not able to invoke\n"
+"`IEx.pry/1` as a macro. This function expects the binding (from\n"
+"`Kernel.binding/0`), the environment (from `__ENV__`) and the timeout\n"
+"(a sensible default is 5000).\n"
 msgstr ""
