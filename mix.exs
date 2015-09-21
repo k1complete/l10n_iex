@@ -28,6 +28,7 @@ defmodule L10nIex.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
 #    [{:exgettext, path: "../"} ]
-    [{:exgettext, github: "k1complete/exgettext"}]
+    [{:elixir, github: "elixir-lang/elixir"},
+     {:exgettext, github: "k1complete/exgettext"}]
   end
 end
