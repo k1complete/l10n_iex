@@ -2,23 +2,43 @@ L10nIex
 =======
 
 IExのローカライズドキュメントフォールバックパッケージです。このパッケー
-ジはExgettextパッケージのサンプルとして開発されています。現時点でヘルパ
-のサマリの翻訳が終了しています。
+ジはExgettextパッケージのサンプルとして開発されています。
 
 インストール
 ============
 
 ```$ mix deps.get
    $ mix deps.compile
-   $ mix l10n.iex.xgettext --iex "../../elixir" 
-                                 # elixirのソースへのパス
+   $ mix compile
 
-elixirへのソースへのパスを指定することで、poフィアルのリファレンスが絶
-対パスから相対パスに替わります。さらに、emacsのpo-modeでパスを指定する
-(Sコマンド)ことでsコマンドでソース参照が出来るようになります。
+現在の最新のバージョンのelixirパッケージをダウンロードおよび
+ビルドしていきます。バージョン固定したい場合は、mix.exsの
+depsの中などにtagを入れるなど工夫して固定してください。
+
+HTMLドキュメント生成
+====================
+
+コンパイルされたら、通常のex_docプロジェクトと同様に、
+mix docsでHTMLドキュメントの生成がされます。
+
+```$ mix docs
+   Docs successfully generated.
+   View them at "doc/index.html".
+
+この後、doc/index.htmlをブラウザで開くと翻訳された
+リファレンスを参照できます。
+
+iexからのhコマンド利用
+======================
+
+iexでmixプロジェクト付で起動すると、翻訳リソースを
+読み込んでくれます。以下のようにして、本物のhコマンドと
+Exgettextのhコマンドを入れ替えます。
 
    $ iex -S mix
-   iex(2)> import Exgettext.Helper
+   iex(1)> import Exgettext.Helper, [only: [h: 0, h: 1]]
+   nil
+   iex(2)> import IEx.Helpers, [except: [h: 0, h: 1]]
    nil
    iex(3)> h 
    * IEx.Helpers
@@ -37,7 +57,6 @@ elixirへのソースへのパスを指定することで、poフィアルのリ
 動作確認ではなく、実際に使用するときにはExgettextとL10nIexのライブラリ
 をElixirのライブラリディレクトリなどに配置しておきます。
 
-
 翻訳
 ======
 
@@ -55,10 +74,17 @@ elixirへのソースへのパスを指定することで、poフィアルのリ
 
 ```mix l10n.xgettext --app source-of-app
 
-source-of-appとしてappのソースファイルへのパスを指定します。
+source-of-appとして`app`のソースファイルへのパスを指定します。
 これでpotファイルのリファレンスが相対パスになります。
 potファイルはpriv/po/にl10n_iex.potという名前で作成されます。
 (これにmsginitコマンドを実行することで言語.poが作成されます)
+
+poファイルの作成 l10n.msginit 
+----------------------------------------------------
+
+@docや@moduledocなどはソースファイル単位で.poファイルを
+作成するため、新しいソースファイルがあったら、これを実行して
+初期の.poファイルを生成しておきます。
 
 既存翻訳テキストとのマージ l10n.msgmerge
 -----------------------------------------------------
@@ -93,11 +119,10 @@ poファイルはコンパイルが必要で、これを行うのがl10n.msgfmt�
 翻訳テキストのIExでの利用
 ----------------------------------------------
 
-IExでl10n_iexのパスを通しておき、import Exgettext.Helperを実行すると、
+IExでl10n_iexのパスを通しておき、import Exgettext.Helper, [only: 
+[h: 1, h: 0]]; import IEx.Helpers, [except: [h: 1, h: 0]] を実行すると、
 hコマンドが置き換えられ、環境変数LANGに応じた翻訳テキストを表示するよう
 になります。
-
-
    
 ** TODO: Add description **
    
