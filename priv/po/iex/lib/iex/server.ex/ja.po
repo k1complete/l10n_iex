@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2015-09-09 21:55+0900\n"
+"PO-Revision-Date: 2015-09-25 23:14+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -57,8 +57,5 @@ msgstr "現在のプロセスから与えられたシェルへのテイクオー
 
 #. TRANSLATORS: def IEx.Server.whereis()
 #: lib/iex/server.ex:10
-#, fuzzy
 msgid "Finds the IEx server, on this or another node.\n"
-msgstr ""
-"このノード、あるいは他のノードのIExサーバが置かれた場所\n"
-"を見付けます。\n"
+msgstr "このノード、あるいは他のノードのIExサーバを見付けます。\n"
