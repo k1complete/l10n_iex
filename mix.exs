@@ -78,7 +78,7 @@ defmodule L10nIex.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
 #    [{:exgettext, path: "../"} ]
-    [{:elixir, github: "elixir-lang/elixir"},
+    [{:elixir, github: "elixir-lang/elixir", tag: "v1.1.0"},
      {:ex_doc, github: "elixir-lang/ex_doc"},
      {:earmark, "~> 0.1.17 or ~> 0.2", optional: true},
      {:exgettext, github: "k1complete/exgettext"}]
