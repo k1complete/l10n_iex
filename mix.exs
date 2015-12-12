@@ -35,11 +35,11 @@ defmodule L10nIex.Mixfile do
     source_dir = "deps/elixir"
     sr = abs_path([source_dir, "lib/iex/ebin"])
 #    IO.inspect File.ls(sr)
-    if (File.exists?(source_dir)) do
-      sref = make_source_ref(source_dir)
-    else
-      sref = nil
-    end
+    sref = if (File.exists?(source_dir)) do
+             make_source_ref(source_dir)
+           else
+             nil
+           end
     version_path = Path.join(source_dir, "VERSION")
 #    IO.inspect [version_path: version_path]
     version = nil
