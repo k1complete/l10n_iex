@@ -10,16 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. TRANSLATORS: def IEx.Evaluator.load_dot_iex(state, path \\ nil)
-#: lib/iex/evaluator.ex:35
-msgid ""
-"Locates and loads an .iex.exs file from one of predefined locations.\n"
-"Returns the new state.\n"
-msgstr ""
-"予め定義された場所の一つから .iex.exs ファイルの場所を指定してロードします。\n"
-"新しいstateを返します。\n"
-
-#. TRANSLATORS: def IEx.Evaluator.start(server, leader)
+#. TRANSLATORS: def IEx.Evaluator.init(server, leader, opts)
 #: lib/iex/evaluator.ex:4
 msgid ""
 "Eval loop for an IEx session. Its responsibilities include:\n"
@@ -37,3 +28,11 @@ msgstr ""
 "  * 評価されているコードの例外をトラップすること\n"
 "  * ヒストリの保持\n"
 "\n"
+
+#~ msgid ""
+#~ "Locates and loads an .iex.exs file from one of predefined locations.\n"
+#~ "Returns the new state.\n"
+#~ msgstr ""
+#~ "予め定義された場所の一つから .iex.exs ファイルの場所を指定してロードしま"
+#~ "す。\n"
+#~ "新しいstateを返します。\n"

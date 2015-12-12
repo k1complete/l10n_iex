@@ -2,8 +2,8 @@ defmodule L10nIex.Mixfile do
   use Mix.Project
   def project do
     [app: :l10n_iex,
-     version: "0.1.1",
-     elixir: "~> 1.1.0-beta or ~> 1.0.0 or ~> 0.15.0-dev",
+     version: "0.1.2",
+#     elixir: "~> 1.2 or ~> 1.1.0-beta or ~> 1.0.0 or ~> 0.15.0-dev",
      compilers: Mix.compilers ++ [:po],
      name: "IEx_l10n",
      source_url: "https://github.com/elixir-lang/elixir",

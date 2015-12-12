@@ -1,32 +1,5 @@
-#. TRANSLATORS: def IEx.after_spawn()
-#: lib/iex.ex:293 
-msgid ""
-"Returns registered `after_spawn` callbacks.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.after_spawn(fun)
-#: lib/iex.ex:286 
-msgid ""
-"Registers a function to be invoked after the IEx process is spawned.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.started?()
-#: lib/iex.ex:300 
-msgid ""
-"Returns `true` if IEx was started.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.color(color, string)
-#: lib/iex.ex:307 
-msgid ""
-"Returns `string` escaped using the specified `color`.\n"
-"\n"
-"ANSI escapes in `string` are not processed in any way.\n"
-msgstr ""
-#. TRANSLATORS: def IEx.configuration()
-#: lib/iex.ex:279 
-msgid ""
-"Returns IEx configuration.\n"
-msgstr ""
 #. TRANSLATORS: defmacro IEx.pry(timeout \\ 5000)
-#: lib/iex.ex:337 
+#: lib/iex.ex:353 
 msgid ""
 "Pries into the process environment.\n"
 "\n"
@@ -85,16 +58,29 @@ msgid ""
 "affect the caller the environment (hence it is called `pry`).\n"
 msgstr ""
 #. TRANSLATORS: def IEx.inspect_opts()
-#: lib/iex.ex:330 
+#: lib/iex.ex:346 
 msgid ""
 "Gets the options used for inspecting.\n"
 msgstr ""
-#. TRANSLATORS: def IEx.width()
-#: lib/iex.ex:321 
+#. TRANSLATORS: def IEx.started?()
+#: lib/iex.ex:316 
 msgid ""
-"Gets the IEx width for printing.\n"
+"Returns `true` if IEx was started.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.configuration()
+#: lib/iex.ex:295 
+msgid ""
+"Returns IEx configuration.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.pry(binding, env, timeout)
+#: lib/iex.ex:416 
+msgid ""
+"Callback for `IEx.pry/1`.\n"
 "\n"
-"Used by helpers and it has a maximum cap of 80 chars.\n"
+"You can invoke this function directly when you are not able to invoke\n"
+"`IEx.pry/1` as a macro. This function expects the binding (from\n"
+"`Kernel.binding/0`), the environment (from `__ENV__`) and the timeout\n"
+"(a sensible default is 5000).\n"
 msgstr ""
 #. TRANSLATORS: Elixir.IEx Summary
 #: lib/iex.ex:2 
@@ -113,6 +99,13 @@ msgid ""
 "\n"
 "IEx provides a bunch of helpers. They can be accessed by typing\n"
 "`h()` into the shell or as a documentation for the `IEx.Helpers` module.\n"
+"\n"
+"## Autocomplete\n"
+"\n"
+"To discover all available functions for a module, type the module name\n"
+"followed by a dot, then press tab to trigger autocomplete. For example:\n"
+"\n"
+"    Enum.\n"
 "\n"
 "## The Break command\n"
 "\n"
@@ -146,7 +139,7 @@ msgid ""
 "Now, try to access the `hello` variable again:\n"
 "\n"
 "    hello\n"
-"    ** (UndefinedFunctionError) undefined function: hello/0\n"
+"    ** (UndefinedFunctionError) undefined function hello/0\n"
 "\n"
 "The command above fails because we have switched shells.\n"
 "Since shells are isolated from each other, you can't access the\n"
@@ -190,7 +183,7 @@ msgid ""
 "as it was defined only in the other shell:\n"
 "\n"
 "    iex(bar@HOST)1> Hello.world\n"
-"    ** (UndefinedFunctionError) undefined function: Hello.world/0\n"
+"    ** (UndefinedFunctionError) undefined function Hello.world/0\n"
 "\n"
 "However, we can connect to the other shell remotely. Open up\n"
 "the User Switch prompt (Ctrl+G) and type:\n"
@@ -307,13 +300,20 @@ msgid ""
 "    ** (TokenMissingError) iex:1: incomplete expression\n"
 "\n"
 msgstr ""
+#. TRANSLATORS: def IEx.color(color, string)
+#: lib/iex.ex:323 
+msgid ""
+"Returns `string` escaped using the specified `color`.\n"
+"\n"
+"ANSI escapes in `string` are not processed in any way.\n"
+msgstr ""
 #. TRANSLATORS: def IEx.configure(options)
-#: lib/iex.ex:212 
+#: lib/iex.ex:219 
 msgid ""
 "Configures IEx.\n"
 "\n"
-"The supported options are: `:colors`, `:inspect`,\n"
-"`:default_prompt`, `:alive_prompt` and `:history_size`.\n"
+"The supported options are: `:colors`, `:inspect`, `:width`,\n"
+"`:history_size`, `:default_prompt` and `:alive_prompt`.\n"
 "\n"
 "## Colors\n"
 "\n"
@@ -350,6 +350,15 @@ msgid ""
 "\n"
 "See `Inspect.Opts` for the full list of options.\n"
 "\n"
+"## Width\n"
+"\n"
+"An integer indicating the number of columns to use in documentation\n"
+"output. Default is 80 columns or result of `:io.columns`, whichever\n"
+"is smaller. The configured value will be used unless it is too large,\n"
+"which in that case `:io.columns` is used. This way you can configure\n"
+"IEx to be your largest screen size and it should always take up the\n"
+"full width of your terminal screen.\n"
+"\n"
 "## History size\n"
 "\n"
 "Number of expressions and their results to keep in the history.\n"
@@ -372,13 +381,20 @@ msgid ""
 "  * `%node`    - the name of the local node\n"
 "\n"
 msgstr ""
-#. TRANSLATORS: def IEx.pry(binding, env, timeout)
-#: lib/iex.ex:400 
+#. TRANSLATORS: def IEx.width()
+#: lib/iex.ex:337 
 msgid ""
-"Callback for `IEx.pry/1`.\n"
+"Gets the IEx width for printing.\n"
 "\n"
-"You can invoke this function directly when you are not able to invoke\n"
-"`IEx.pry/1` as a macro. This function expects the binding (from\n"
-"`Kernel.binding/0`), the environment (from `__ENV__`) and the timeout\n"
-"(a sensible default is 5000).\n"
+"Used by helpers and it has a maximum cap of 80 chars.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.after_spawn(fun)
+#: lib/iex.ex:302 
+msgid ""
+"Registers a function to be invoked after the IEx process is spawned.\n"
+msgstr ""
+#. TRANSLATORS: def IEx.after_spawn()
+#: lib/iex.ex:309 
+msgid ""
+"Returns registered `after_spawn` callbacks.\n"
 msgstr ""
