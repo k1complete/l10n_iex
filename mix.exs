@@ -56,7 +56,8 @@ defmodule L10nIex.Mixfile do
      logo_url: "http://elixir-lang.org/docs/logo.png",
      source_beam: sr,
      source_ref: sref,
-     main: "IEx"
+     main: "IEx",
+     output: "doc/iex"
     ]
   end
 
