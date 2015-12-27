@@ -53,7 +53,7 @@ defmodule L10nIex.Mixfile do
      formatter: Exgettext.HTML,
      source_root: abs_path("deps/elixir"),
      logo: "logo.png",
-     logo_url: "http://elixir-lang.org/docs/logo.png",
+#     logo_url: "http://elixir-lang.org/docs/logo.png",
      source_beam: sr,
      source_ref: sref,
      main: "IEx",
