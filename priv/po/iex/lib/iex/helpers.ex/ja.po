@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: l 10n_iex\n"
-"PO-Revision-Date: 2015-12-12 11:27+0900\n"
+"PO-Revision-Date: 2016-02-21 10:43+0900\n"
 "Last-Translator: 小田 照敬 <EMAIL@ADDRESS>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -11,12 +11,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. TRANSLATORS: def IEx.Helpers.pwd()
-#: lib/iex/helpers.ex:457
+#: lib/iex/helpers.ex:456
 msgid "Prints the current working directory.\n"
 msgstr "現在の作業ディレクトリを表示します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.recompile()
-#: lib/iex/helpers.ex:57
+#: lib/iex/helpers.ex:56
 msgid ""
 "Recompiles the current Mix application.\n"
 "\n"
@@ -61,7 +61,7 @@ msgstr ""
 "削除されるかもしれません。\n"
 
 #. TRANSLATORS: def IEx.Helpers.ls(path \\ ".")
-#: lib/iex/helpers.ex:477
+#: lib/iex/helpers.ex:476
 msgid ""
 "Produces a simple list of a directory's contents.\n"
 "\n"
@@ -72,7 +72,7 @@ msgstr ""
 "もし`path`がファイルを指していたら、そのフルパスを表示します。\n"
 
 #. TRANSLATORS: defmacro IEx.Helpers.b(term)
-#: lib/iex/helpers.ex:252
+#: lib/iex/helpers.ex:251
 msgid ""
 "Prints the documentation for the given callback function.\n"
 "\n"
@@ -99,7 +99,7 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: def IEx.Helpers.cd(directory)
-#: lib/iex/helpers.ex:465
+#: lib/iex/helpers.ex:464
 msgid "Changes the current working directory to the given path.\n"
 msgstr "与えられたパスへカレントディレクトリを変更します。\n"
 
@@ -133,9 +133,9 @@ msgid ""
 "  * `cd/1`          - changes the current directory\n"
 "  * `clear/0`       - clears the screen\n"
 "  * `flush/0`       - flushes all messages sent to the shell\n"
-"  * `i/1`           - prints information about the given data type\n"
 "  * `h/0`           - prints this help message\n"
 "  * `h/1`           - prints help for the given module, function or macro\n"
+"  * `i/1`           - prints information about the given data type\n"
 "  * `import_file/1` - evaluates the given file in the shell's context\n"
 "  * `l/1`           - loads the given module's beam code\n"
 "  * `ls/0`          - lists the contents of the current directory\n"
@@ -148,7 +148,6 @@ msgid ""
 "  * `t/1`           — prints type information\n"
 "  * `v/0`           — retrieves the last value from the history\n"
 "  * `v/1`           — retrieves the nth value from the history\n"
-"  * `import_file/1` — evaluates the given file in the shell's context\n"
 "\n"
 "Help for all of those functions can be consulted directly from\n"
 "the command line using the `h` helper itself. Try:\n"
@@ -170,7 +169,7 @@ msgstr ""
 "    h Enum.map\n"
 "    h Enum.reverse/1\n"
 "\n"
-"shellのなかで任意の値の内部情報を見るために`h`関数を使うことも\n"
+"shellのなかで任意の値の内部情報を見るために`i`関数を使うことも\n"
 "できます:\n"
 "\n"
 "    i \"hello\"   \n"
@@ -182,7 +181,7 @@ msgstr ""
 "  * `cd/1`          - カレントディレクトリを変更します\n"
 "  * `clear/0`       - スクリーンをクリアします\n"
 "  * `flush/0`       - シェルへ送信した全メッセージを破棄します\n"
-"  * `i/i`           - 与えられたデータタイプについての情報を表示します\n"
+"  * `i/1`           - 与えられたデータタイプについての情報を表示します\n"
 "  * `h/0`           - このヘルプメッセージを表示します\n"
 "  * `h/1`           - 与えられたモジュール、関数、マクロのヘルプを表示します\n"
 "  * `import_file/1` - シェルのコンテキストで与えられたファイルを評価します\n"
@@ -206,7 +205,7 @@ msgstr ""
 "IEx全体についてもっと学ぶためには、`h(IEx)`とタイプしよう。\n"
 
 #. TRANSLATORS: def IEx.Helpers.clear()
-#: lib/iex/helpers.ex:172
+#: lib/iex/helpers.ex:171
 msgid ""
 "Clears the console screen.\n"
 "\n"
@@ -220,7 +219,7 @@ msgstr ""
 "これはデフォルトではWindowsでは利用できないことを意味します。\n"
 
 #. TRANSLATORS: defmacro IEx.Helpers.h(term)
-#: lib/iex/helpers.ex:196
+#: lib/iex/helpers.ex:195
 msgid ""
 "Prints the documentation for the given module\n"
 "or for the given function/arity pair.\n"
@@ -256,7 +255,7 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: defmacro IEx.Helpers.import_file(path, opts \\ [])
-#: lib/iex/helpers.ex:555
+#: lib/iex/helpers.ex:558
 msgid ""
 "Evaluates the contents of the file at `path` as if it were directly typed "
 "into\n"
@@ -335,12 +334,12 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: def IEx.Helpers.h()
-#: lib/iex/helpers.ex:188
+#: lib/iex/helpers.ex:187
 msgid "Prints the documentation for `IEx.Helpers`.\n"
 msgstr "`IEx.Helpers`のドキュメントを表示します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.c(files, path \\ ".")
-#: lib/iex/helpers.ex:125
+#: lib/iex/helpers.ex:124
 msgid ""
 "Compiles the given files.\n"
 "\n"
@@ -381,7 +380,7 @@ msgstr ""
 "    #=> [Baz]\n"
 
 #. TRANSLATORS: def IEx.Helpers.l(module)
-#: lib/iex/helpers.ex:403
+#: lib/iex/helpers.ex:402
 msgid ""
 "Loads the given module's beam code (and ensures any previous\n"
 "old version was properly purged before).\n"
@@ -398,7 +397,7 @@ msgstr ""
 "時に便利です。\n"
 
 #. TRANSLATORS: def IEx.Helpers.pid(x, y, z)
-#: lib/iex/helpers.ex:622
+#: lib/iex/helpers.ex:625
 msgid ""
 "Creates a PID with 3 non negative integers passed as arguments\n"
 "to the function.\n"
@@ -420,7 +419,7 @@ msgstr ""
 "    #PID<0.64.2048>\n"
 
 #. TRANSLATORS: def IEx.Helpers.r(module)
-#: lib/iex/helpers.ex:361
+#: lib/iex/helpers.ex:360
 msgid ""
 "Recompiles and reloads the given `module`.\n"
 "\n"
@@ -455,7 +454,7 @@ msgstr ""
 "モジュールをリロードしても、それらはリロードされません。\n"
 
 #. TRANSLATORS: defmacro IEx.Helpers.t(term)
-#: lib/iex/helpers.ex:284
+#: lib/iex/helpers.ex:283
 msgid ""
 "Prints the types for the given module or for the given function/arity pair.\n"
 "\n"
@@ -475,7 +474,7 @@ msgstr ""
 "    t(Enum.t)\n"
 
 #. TRANSLATORS: def IEx.Helpers.respawn()
-#: lib/iex/helpers.ex:543
+#: lib/iex/helpers.ex:546
 msgid ""
 "Respawns the current shell by starting a new shell process.\n"
 "\n"
@@ -486,7 +485,7 @@ msgstr ""
 "成功すると`true`を返します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.v(n \\ -1)
-#: lib/iex/helpers.ex:351
+#: lib/iex/helpers.ex:350
 msgid ""
 "Retrieves the nth expression's value from the history.\n"
 "\n"
@@ -500,12 +499,12 @@ msgstr ""
 "例えば、v(-1)は最後に評価された式を返します。\n"
 
 #. TRANSLATORS: def IEx.Helpers.flush()
-#: lib/iex/helpers.ex:431
+#: lib/iex/helpers.ex:430
 msgid "Flushes all messages sent to the shell and prints them out.\n"
 msgstr "シェルへ送られた全てのメッセージを破棄し、それらを表示します。\n"
 
 #. TRANSLATORS: defmacro IEx.Helpers.s(term)
-#: lib/iex/helpers.ex:312
+#: lib/iex/helpers.ex:311
 msgid ""
 "Prints the specs for the given module or for the given function/arity pair.\n"
 "\n"
@@ -531,6 +530,6 @@ msgstr ""
 "\n"
 
 #. TRANSLATORS: def IEx.Helpers.i(term)
-#: lib/iex/helpers.ex:416
+#: lib/iex/helpers.ex:415
 msgid "Prints information about the given data type.\n"
 msgstr "与えられたデータタイプについての情報を表示します。\n"
